@@ -1,0 +1,25 @@
+.burgerMenu{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(83, 96, 205, 1);
+    position: absolute;
+    top: 84px;
+    transform: translateX(-500%);
+    opacity: 0;
+    transition: 0.6s;
+    &Active{
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid rgb(83, 96, 205);
+        position: absolute;
+        top: 84px;
+        transform: translateX(0);
+        transition: 0.6s;
+        opacity: 1;
+    }
+    &ThemSwitch{
+        display: flex;
+        flex-direction: row;
+    }
+}
+

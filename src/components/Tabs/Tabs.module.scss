@@ -1,0 +1,43 @@
+.tabsContainer{
+    padding-bottom: 40px;
+    border-bottom: 2px solid rgb(216, 215, 215);
+}
+
+.tabsContainer button{
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    font-size: 25px;
+    padding: 0 40px;
+}
+
+.tabsContainer button:hover{
+    color: rgb(1, 1, 209);
+}
+
+.underline {
+    position: relative;
+
+    &:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 67px;
+    width: 0;
+    height: 3px; /* Высота линии */
+    background-color: rgba(186, 187, 197, 1); /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+    &:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 67px;
+    height: 3px; /* Высота линии */
+    background-color: rgba(186, 187, 197, 1); /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+}

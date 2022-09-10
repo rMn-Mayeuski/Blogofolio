@@ -1,0 +1,18 @@
+.burgerMenuBtn{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(49, 48, 55, 1);
+    outline: none;
+    background-color: white;
+    border: 1px solid rgba(232, 232, 232, 1);
+    cursor: pointer;
+    padding: 28px 0;
+    text-align: center;
+    width: 100%;
+    &:hover{
+        color: rgba(34, 49, 170, 1);
+    }
+}
