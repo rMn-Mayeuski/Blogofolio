@@ -6,6 +6,8 @@ import icoDark from "../../../img/Dark.svg";
 import icoSun from "../../../img/Sun.svg";
 import BurgerMenuBtn from './BurgerMenuBtn/BurgerMenuBtn';
 import BurgerMenuBtnThemSwitch from './BurgerMenuBtnThemSwitch/BurgerMenuBtnThemSwitch';
+import { Route, Routes } from 'react-router-dom';
+
 
 interface MenuСondition {
     active: any;
@@ -14,17 +16,25 @@ interface MenuСondition {
 
 const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
     return (
-        <div className={active ? styles.burgerMenuActive : styles.burgerMenu }>
-            <UserInfo  name='Raman' lastName='Mayeuski' avatar={avatar}/>
-            <BurgerMenuBtn title='Home'/>
-            <BurgerMenuBtn title='Add post'/>
-            <div className={styles.burgerMenuThemSwitch}>
-                <BurgerMenuBtnThemSwitch ico={icoSun}/>
-                <BurgerMenuBtnThemSwitch ico={icoDark}/>
+        <div 
+        className={active ? styles.burgerMenuActive : styles.burgerMenu}
+        onClick={() => setActive(false)}>
+            <div className={styles.burgerMenuContent} onClick={e => e.stopPropagation()}>
+                <UserInfo  name='Raman' lastName='Mayeuski' avatar={avatar}/>
+                
+                    <BurgerMenuBtn to='/addpost' title='Add post'/>
+                    <BurgerMenuBtn to='/' title='Home'/>
+                
+                <div className={styles.burgerMenuThemSwitch}>
+                    <BurgerMenuBtnThemSwitch ico={icoSun}/>
+                    <BurgerMenuBtnThemSwitch ico={icoDark}/>
+                </div>
+                <BurgerMenuBtn to='/addpost' title='Log Out' background='#E8E8E8'/>
             </div>
-            <BurgerMenuBtn title='Log Out' background='#E8E8E8'/>
         </div>
     );
 };
 
 export default BurgerMenu;
+
+

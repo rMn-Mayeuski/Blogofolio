@@ -7,16 +7,14 @@ import BurgerMenu from './BurgerMenu/BurgerMenu';
 const Header: React.FC = () => {
 
     const [menuActive, setMenuActive] = useState(false);
-    const [burgerAcive, setBurgerActive] = useState(false)
 
     return (
         <header className={styles.header}>
-            <div className='wrapper'>
+            <div className="wrapper">
                 <div className={styles.headerContainer}>
                     <div 
                     className={styles.headerBurger}
                     onClick= {() => setMenuActive(!menuActive)}
-                    // onClick= {() => setBurgerActive(!burgerAcive)}
                     >
                         <span></span>
                     </div>

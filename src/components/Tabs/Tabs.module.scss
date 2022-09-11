@@ -1,18 +1,22 @@
 .tabsContainer{
     padding-bottom: 40px;
-    border-bottom: 2px solid rgb(216, 215, 215);
-}
-
-.tabsContainer button{
-    cursor: pointer;
-    border: none;
-    background-color: white;
-    font-size: 25px;
-    padding: 0 40px;
-}
-
-.tabsContainer button:hover{
-    color: rgb(1, 1, 209);
+    border-bottom: 2px solid rgba(218, 218, 218, 1);
+    & button{
+        cursor: pointer;
+        border: none;
+        background-color: white;
+        padding: 0 40px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #313037;
+        &:hover{
+            color: rgb(1, 1, 209);
+        }
+        
+    }
 }
 
 .underline {
@@ -23,10 +27,10 @@
     display: block;
     position: absolute;
     right: 0;
-    top: 67px;
+    top: 63px;
     width: 0;
     height: 3px; /* Высота линии */
-    background-color: rgba(186, 187, 197, 1); /* Цвет подчеркивания при исчезании линии*/
+    background-color: rgba(49, 48, 55, 1); /* Цвет подчеркивания при исчезании линии*/
     transition: width 0.5s; /* Время эффекта */
 }
     &:hover:after {
@@ -35,9 +39,9 @@
     display: block;
     position: absolute;
     left: 0;
-    top: 67px;
+    top: 63px;
     height: 3px; /* Высота линии */
-    background-color: rgba(186, 187, 197, 1); /* Цвет подчеркивания при появлении линии*/
+    background-color: rgba(49, 48, 55, 1); /* Цвет подчеркивания при появлении линии*/
     transition: width 0.5s;  /* Время эффекта */
 }
 }

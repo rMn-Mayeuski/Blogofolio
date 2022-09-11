@@ -1,0 +1,24 @@
+.mainPostContentBottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 32px;
+    &Left{
+        display: flex;
+        gap: 50px;
+        & img{
+            cursor: pointer;
+            height: 24px;
+            width: 24px;
+        }
+    }
+    &Right{
+        display: flex;
+        gap: 30px;
+        & img{
+            cursor: pointer;
+            height: 24px;
+            width: 24px;
+        }
+    }
+}

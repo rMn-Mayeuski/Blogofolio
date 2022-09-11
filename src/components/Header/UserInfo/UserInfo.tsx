@@ -3,7 +3,7 @@ import styles from "../Header.module.scss";
 
 interface UserInfo {
     name: string;
-    lastName?: string;
+    lastName: string;
     avatar?: any;
 }
 
