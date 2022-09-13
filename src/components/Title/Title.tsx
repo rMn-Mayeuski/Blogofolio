@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from "./Title.module.scss"
 
-const Title: React.FC = () => {
+interface Title {
+    title: string;
+}
+
+const Title: React.FC<Title> = ({title}) => {
     return (
         <section className='title'>
             <div className='wrapper'>
                 <h1 className={styles.title}>
-                    Blog
+                    {title}
                 </h1>
             </div>
         </section>

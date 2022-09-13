@@ -32,6 +32,7 @@
     max-width: 736px;
     padding-bottom: 42px;
     border-bottom: 1px solid rgba(218, 218, 218, 1);
+    margin: 25px 0; //Убрать потом\\
     &Top{
         display: flex;
         flex-direction: row;
@@ -41,5 +42,10 @@
         flex-direction: column;
         max-width: 448px;
         margin-right: 32px;
+    }
+    &Right img{
+        height: 244px;
+        width: 256px;
+        object-fit: cover;
     }
 }

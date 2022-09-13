@@ -1,9 +1,10 @@
 import React from 'react';
+import Title from '../../components/Title/Title';
 
 const AddPost: React.FC = () => {
     return (
         <div>
-            Holla
+            <Title title='Add post'/>
         </div>
     );
 };

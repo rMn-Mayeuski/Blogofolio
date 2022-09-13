@@ -23,7 +23,7 @@ const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
                 <UserInfo  name='Raman' lastName='Mayeuski' avatar={avatar}/>
                 
                     <BurgerMenuBtn to='/addpost' title='Add post'/>
-                    <BurgerMenuBtn to='/' title='Home'/>
+                    <BurgerMenuBtn to='/home' title='Home'/>
                 
                 <div className={styles.burgerMenuThemSwitch}>
                     <BurgerMenuBtnThemSwitch ico={icoSun}/>

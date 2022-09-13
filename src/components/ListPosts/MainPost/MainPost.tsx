@@ -1,30 +1,41 @@
 import React from 'react';
+import { posts } from '../../../SharedLogic/ProjectDate';
 import ListPostsAction from '../ListPostsAction/ListPostsAction';
 import styles from "./MainPost.module.scss"
 
-interface MainPost {
-    id: number,
-    image: string,
-    text: string,
-    date: "2022-11-09",
-    title: string,
-}
+// interface MainPost {
+//     id: number,
+//     image: string,
+//     text: string,
+//     date: "2022-11-09",
+//     title: string,
+// }
 
-const MainPost: React.FC<MainPost> = ({id, image, text, date, title}) => {
-    return (
-        <div className={styles.mainPostContent}>
-            <div className={styles.mainPostContentTop}>
-                <div className={styles.mainPostContentLeft}>
-                    <p className={styles.date}>{date}</p>
-                    <h2 className={styles.mainPostTitle}>{title}</h2>
-                    <p className={styles.mainPostText}>{text}</p>
-                </div>
+const MainPost:React.FC = () => {
+
+    const blogPosts = posts.map((item) => {
+        return (
+            <div key={item.id} className={styles.mainPostContent}>
+                <div className={styles.mainPostContentTop}>
+                    <div className={styles.mainPostContentLeft}>
+                        <p className={styles.date}>{item.date}</p>
+                        <h2 className={styles.mainPostTitle}>{item.title}</h2>
+                        <p className={styles.mainPostText}>{item.description}</p>
+                    </div>
                 <div className={styles.mainPostContentRight}>
-                    <img src={image} alt="img" />
+                    <img src={item.image} alt="img" />
                 </div>
             </div>
-            <ListPostsAction/>
+                <ListPostsAction/>
         </div>
+        )
+    })
+    
+    return (
+        <>
+        {blogPosts} 
+        </>
+        
     );
 };
 
