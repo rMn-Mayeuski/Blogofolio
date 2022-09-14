@@ -1,12 +1,8 @@
-.date {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #8D8E97;
-}
+@import "../../../mixin.scss";
 
+.date {
+    @include postDate;
+}
 .mainPostTitle{
     font-family: 'Inter';
     font-style: normal;
@@ -16,7 +12,6 @@
     color: #313037;
     margin: 8px 0 24px 0;
 }
-
 .mainPostText{
     font-family: 'Inter';
     font-style: normal;
@@ -25,14 +20,10 @@
     line-height: 28px;
     color: #8D8E97;
 }
-
 .mainPostContent{
-    display: flex;
-    flex-direction: column;
+    @include postContainer;
     max-width: 736px;
-    padding-bottom: 42px;
-    border-bottom: 1px solid rgba(218, 218, 218, 1);
-    margin: 25px 0; //Убрать потом\\
+    margin-bottom: 25px;
     &Top{
         display: flex;
         flex-direction: row;

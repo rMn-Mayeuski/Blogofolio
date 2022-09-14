@@ -1,0 +1,19 @@
+@import "../../../mixin.scss";
+
+.tabPostContent{
+    @include postContainer;
+    max-width: 352px;
+    margin: 20px 0;
+    &Top img{
+        height: 246px;
+        width: 352px;
+        object-fit: cover;
+    }
+}
+.date {
+    @include postDate;
+    margin: 24px 0 8px 0;
+}
+.tabPostTitle{
+    @include tabPostTitle;
+}

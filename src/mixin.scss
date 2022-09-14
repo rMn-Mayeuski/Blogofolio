@@ -5,3 +5,25 @@
     background: #babbc5;
     position: absolute;
 }
+@mixin postDate {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8D8E97;
+}
+@mixin tabPostTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #313037;
+}
+@mixin postContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(218, 218, 218, 1);
+}

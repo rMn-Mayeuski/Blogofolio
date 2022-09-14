@@ -1,0 +1,26 @@
+@import "../../../mixin.scss";
+
+.smallPostContainer{
+    @include postContainer;
+    max-width: 354px;
+    margin-bottom: 27px;
+    &Top{
+        display: flex;
+        flex-direction: row;
+    }
+    &Left{
+        margin-right: 34px;
+    }
+    &Right img{
+        height: 96px;
+        width: 96px;
+        object-fit: cover;
+    }
+}
+.date{
+    @include postDate;
+}
+.smallPostTitle{
+    @include tabPostTitle;
+    margin-top: 8px;
+}

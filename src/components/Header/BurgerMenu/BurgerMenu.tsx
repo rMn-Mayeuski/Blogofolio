@@ -23,13 +23,13 @@ const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
                 <UserInfo  name='Raman' lastName='Mayeuski' avatar={avatar}/>
                 
                     <BurgerMenuBtn to='/addpost' title='Add post'/>
-                    <BurgerMenuBtn to='/home' title='Home'/>
+                    <BurgerMenuBtn to='/' title='Home'/>
                 
                 <div className={styles.burgerMenuThemSwitch}>
                     <BurgerMenuBtnThemSwitch ico={icoSun}/>
                     <BurgerMenuBtnThemSwitch ico={icoDark}/>
                 </div>
-                <BurgerMenuBtn to='/addpost' title='Log Out' background='#E8E8E8'/>
+                <BurgerMenuBtn to='/' title='Log Out' background='#E8E8E8'/>
             </div>
         </div>
     );

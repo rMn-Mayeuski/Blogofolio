@@ -3,14 +3,6 @@ import { posts } from '../../../SharedLogic/ProjectDate';
 import ListPostsAction from '../ListPostsAction/ListPostsAction';
 import styles from "./MainPost.module.scss"
 
-// interface MainPost {
-//     id: number,
-//     image: string,
-//     text: string,
-//     date: "2022-11-09",
-//     title: string,
-// }
-
 const MainPost:React.FC = () => {
 
     const blogPosts = posts.map((item) => {
@@ -22,12 +14,12 @@ const MainPost:React.FC = () => {
                         <h2 className={styles.mainPostTitle}>{item.title}</h2>
                         <p className={styles.mainPostText}>{item.description}</p>
                     </div>
-                <div className={styles.mainPostContentRight}>
-                    <img src={item.image} alt="img" />
+                    <div className={styles.mainPostContentRight}>
+                        <img src={item.image} alt="img" />
+                    </div>
                 </div>
-            </div>
                 <ListPostsAction/>
-        </div>
+            </div>
         )
     })
     

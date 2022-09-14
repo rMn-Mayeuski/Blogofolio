@@ -5,7 +5,7 @@ import Title from '../../components/Title/Title';
 
 const MainPage: React.FC = () => {
     return (
-        <main>
+        <main className='main'>
             <Title title='Blog'/>
             <Tabs/>
             <ListPosts/>
