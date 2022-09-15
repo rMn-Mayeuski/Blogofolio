@@ -1,29 +1,50 @@
 import React from 'react';
 import styles from "./ListPosts.module.scss"
-import MainPost from './MainPost/MainPost';
-import SmalPost from './SmallPost/SmallPost';
-import TabPost from './TabPost/TabPost';
-// import MPImg from "../../img/MainPostIMG.png"
+import ListPostsAction from './ListPostsAction/ListPostsAction';
 
-const ID = Math.random() + 1;
+type PostSizes = "Small" | "Tab" | "Main";
 
-const ListPosts: React.FC = () => {
-    return (
-        <section className='list-posts'>
-            <div className="wrapper">
-                <div className={styles.listPostsContainer}>
-                    <div className={styles.listPostsContainerLeft}>
-                        <MainPost/>
-                        <div className={styles.tabPostsContainer}>
-                            <TabPost/>
-                        </div>
-                    </div>
-                    <div className={styles.listPostsContainerRight}>
-                        <SmalPost/>
-                    </div>
-                </div>
-            </div>
-        </section>
+export interface IPost {
+    "id": number,
+    "image": string,
+    "description": string,
+    "date": string,
+    "title": string,
+}
+
+export interface PostProps {
+    size: PostSizes;
+}
+
+const ListPosts: React.FC<IPost & PostProps> = ({ id, image, description, date, title, size}) => {
+    return  (
+
+    <div key={id} className={styles.test}>
+        {size}
+            {size === "Tab" && <img className={styles.test} src={image} alt="img"/>}
+        <div>
+            <p>{date}</p>
+            <h3>{title}</h3>
+            {size === "Main" && <p>{description}</p>}
+        </div>
+        {size !== "Tab" && <img className={styles.test} src={image} alt="img"/>}
+    </div>
+
+        // <section className='list-posts'>
+        //     <div className="wrapper">
+        //         <div className={styles.listPostsContainer}>
+
+        //             <div className={styles.listPostsContainerLeft}>
+        //                 <div className={styles.tabPostsContainer}>
+
+        //                 </div>
+        //             </div>
+        //             <div className={styles.listPostsContainerRight}>
+                    
+        //             </div>
+        //         </div>
+        //     </div>
+        // </section>
     );
 };
 

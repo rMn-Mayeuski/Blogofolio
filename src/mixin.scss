@@ -27,3 +27,13 @@
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(218, 218, 218, 1);
 }
+@mixin mainPageBtn {
+    cursor: pointer;
+    background-color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #313037;
+}

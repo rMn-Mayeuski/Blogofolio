@@ -1,31 +1,22 @@
 import React, { FC } from 'react';
 import ListPostsAction from '../ListPostsAction/ListPostsAction';
-import { posts } from '../../../SharedLogic/ProjectDate';
 import styles from "./SmallPost.module.scss"
+import {IPost, PostProps} from "../ListPosts";
 
-const SmalPost: FC = () => {
-
-    const blogPosts = posts.map((item) => {
-        return (
-        <div key={item.id} className={styles.smallPostContainer}>
+const SmalPost: React.FC<IPost & PostProps> = ({image, description, title, date, id, size}) => {
+    return (
+        <div className={styles.smallPostContainer}>
             <div className={styles.smallPostContainerTop}>
                 <div className={styles.smallPostContainerLeft}>
-                    <p className={styles.date}>{item.date}</p>
-                    <h3 className={styles.smallPostTitle}>{item.title}</h3>
+                    <p className={styles.date}>{date}</p>
+                    <h3 className={styles.smallPostTitle}>{title}</h3>
                 </div>
                 <div className={styles.smallPostContainerRight}>
-                    <img src={item.image} alt="img" />
+                    <img src={image} alt="img" />
                 </div>
             </div>
             <ListPostsAction/>
         </div>
-        )
-    })
-
-    return (
-        <>
-            {blogPosts}
-        </>
     );
 };
 

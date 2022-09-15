@@ -1,27 +1,20 @@
+@import "/src/mixin.scss";
+
 .tabsContainer{
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(218, 218, 218, 1);
     & button{
-        cursor: pointer;
-        border: none;
-        background-color: white;
+        @include mainPageBtn;
         padding: 0 40px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-        color: #313037;
+        border: none;
         &:hover{
             color: rgb(1, 1, 209);
         }
         
     }
 }
-
 .underline {
     position: relative;
-
     &:after {
 	content: "";
     display: block;

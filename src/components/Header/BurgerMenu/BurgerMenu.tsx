@@ -6,7 +6,6 @@ import icoDark from "../../../img/Dark.svg";
 import icoSun from "../../../img/Sun.svg";
 import BurgerMenuBtn from './BurgerMenuBtn/BurgerMenuBtn';
 import BurgerMenuBtnThemSwitch from './BurgerMenuBtnThemSwitch/BurgerMenuBtnThemSwitch';
-import { Route, Routes } from 'react-router-dom';
 
 
 interface MenuСondition {
@@ -29,7 +28,7 @@ const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
                     <BurgerMenuBtnThemSwitch ico={icoSun}/>
                     <BurgerMenuBtnThemSwitch ico={icoDark}/>
                 </div>
-                <BurgerMenuBtn to='/' title='Log Out' background='#E8E8E8'/>
+                <BurgerMenuBtn to='/signin' title='Log Out' background='#E8E8E8'/>
             </div>
         </div>
     );
