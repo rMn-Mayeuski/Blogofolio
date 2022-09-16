@@ -11,16 +11,15 @@ import "./App.scss";
 
 const App: React.FC = () => {
   return (
-    <div className='main'>
+    <>
       <Header/>
-      
       <Routes> 
             <Route path='/' element={<MainPage/>}/>
             <Route path='/addpost' element={<AddPost/>}/>
             <Route path='/signin' element={<SignInPage/>}/>
       </Routes>
       <Footer/>
-    </div>
+    </>
   );
 };
 

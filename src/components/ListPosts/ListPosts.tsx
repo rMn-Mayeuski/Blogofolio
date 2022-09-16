@@ -21,8 +21,6 @@ const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
     }
 
     return  (
-        <section className='list-posts'>
-            <div className={styles.wrapper}>
                 <div className={styles.listPostsContainer}>
                     <div className={`${styles.listPostsContainerLeft}`}>
                     {postsConfig
@@ -46,8 +44,6 @@ const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
                         .filter((post, index) => index >= 5)}
                     </div>
                 </div>
-            </div>
-        </section>
     );
 };
 

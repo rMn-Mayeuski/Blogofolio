@@ -1,19 +1,16 @@
 @import "/src/mixin.scss";
 
-.wrapper{
-    @include wrapper;
-}
 .tabsContainer{
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(218, 218, 218, 1);
     & button{
         @include mainPageBtn;
+        background-color: #E5E5E5;
         padding: 0 40px;
         border: none;
         &:hover{
             color: rgb(1, 1, 209);
         }
-        
     }
 }
 .underline {

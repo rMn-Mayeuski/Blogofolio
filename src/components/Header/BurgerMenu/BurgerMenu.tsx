@@ -28,7 +28,7 @@ const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
                     <BurgerMenuBtnThemSwitch ico={icoSun}/>
                     <BurgerMenuBtnThemSwitch ico={icoDark}/>
                 </div>
-                <BurgerMenuBtn to='/signin' title='Log Out' background='#E8E8E8'/>
+                <BurgerMenuBtn to='/signin' title='Log Out'/>
             </div>
         </div>
     );

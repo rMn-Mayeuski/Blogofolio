@@ -1,0 +1,35 @@
+.inputConteiner{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 544px;
+    & label{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #313037;
+    }
+    & input {
+        padding: 20px;
+        border: solid #FFFFFF;
+        border-radius: 2px;
+        &:disabled{
+            border: none;
+            background: rgb(197, 197, 197);
+            border-radius: 2px;
+        }
+        &:focus-visible{
+            outline: 2px solid #DADADA;
+        }
+        &::placeholder{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: #8D8E97;
+        }
+    }
+}
