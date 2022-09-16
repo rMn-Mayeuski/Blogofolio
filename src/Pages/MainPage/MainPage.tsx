@@ -13,7 +13,7 @@ const MainPage: React.FC = () => {
         <main className='main'>
             <Title title='Blog'/>
             <Tabs/>
-            <Test posts={posts}/>
+            <ListPosts postsConfig={posts}/>
         </main>
     );
 };

@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 
     return (
         <header className={styles.header}>
-            <div className="wrapper">
+            <div className={styles.wrapper}>
                 <div className={styles.headerContainer}>
                     <div 
                     className={styles.headerBurger}

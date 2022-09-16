@@ -1,3 +1,9 @@
+@import "../../mixin.scss";
+
+.wrapper{
+    @include wrapper;
+}
+
 .header{
     background-color: #2231AA;
     &Container{

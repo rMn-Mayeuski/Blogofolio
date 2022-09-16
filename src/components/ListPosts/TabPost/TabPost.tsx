@@ -1,9 +1,9 @@
 import React from 'react';
 import ListPostsAction from '../ListPostsAction/ListPostsAction';
 import styles from "./TabPost.module.scss"
-import {IPost, PostProps} from "../ListPosts";
+import {IPost} from "../Test";
 
-const TabPost: React.FC<IPost & PostProps> = ({image, description, title, date, id, size}) => {    
+const TabPost: React.FC<IPost> = ({image, title, date, id}) => {    
     return (
         <div  className={styles.tabPostContent}>
             <div className={styles.tabPostContentTop}>

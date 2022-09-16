@@ -1,50 +1,53 @@
 import React from 'react';
 import styles from "./ListPosts.module.scss"
-import ListPostsAction from './ListPostsAction/ListPostsAction';
+import Test from './Test';
+import {IPost} from "./Test";
 
-type PostSizes = "Small" | "Tab" | "Main";
-
-export interface IPost {
-    "id": number,
-    "image": string,
-    "description": string,
-    "date": string,
-    "title": string,
+interface PostsListProps {
+    postsConfig: IPost[];
 }
 
-export interface PostProps {
-    size: PostSizes;
-}
+const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
+    const handleSizeForCard = (index:number) => {
+        if(index === 0) {
+            return "Main"
+        }
+        else if (index >= 1 && index <= 4) {
+            return "Tab"
+        }
+        else {
+            return "Small"
+        }
+    }
 
-const ListPosts: React.FC<IPost & PostProps> = ({ id, image, description, date, title, size}) => {
     return  (
-
-    <div key={id} className={styles.test}>
-        {size}
-            {size === "Tab" && <img className={styles.test} src={image} alt="img"/>}
-        <div>
-            <p>{date}</p>
-            <h3>{title}</h3>
-            {size === "Main" && <p>{description}</p>}
-        </div>
-        {size !== "Tab" && <img className={styles.test} src={image} alt="img"/>}
-    </div>
-
-        // <section className='list-posts'>
-        //     <div className="wrapper">
-        //         <div className={styles.listPostsContainer}>
-
-        //             <div className={styles.listPostsContainerLeft}>
-        //                 <div className={styles.tabPostsContainer}>
-
-        //                 </div>
-        //             </div>
-        //             <div className={styles.listPostsContainerRight}>
-                    
-        //             </div>
-        //         </div>
-        //     </div>
-        // </section>
+        <section className='list-posts'>
+            <div className={styles.wrapper}>
+                <div className={styles.listPostsContainer}>
+                    <div className={`${styles.listPostsContainerLeft}`}>
+                    {postsConfig
+                        .map((post, index) =>
+                            <Test key={post.id} id={post.id} title={post.title} date={post.date}
+                            image={post.image}  description={post.description} size={handleSizeForCard(index)}/>)
+                        .filter((post, index) => index === 0)}
+                        <div className={styles.tabPostsContainer}>
+                        {postsConfig
+                        .map((post, index) =>
+                            <Test key={post.id} id={post.id} title={post.title} date={post.date}
+                            image={post.image}  description={post.description} size={handleSizeForCard(index)}/>)
+                        .filter((post, index) => index >= 1 && index <= 4 )}
+                        </div>
+                    </div>
+                    <div className={styles.listPostsContainerRight}>
+                        {postsConfig
+                        .map((post, index) =>
+                            <Test key={post.id} id={post.id} title={post.title} date={post.date}
+                            image={post.image} description={post.description} size={handleSizeForCard(index)}/>)
+                        .filter((post, index) => index >= 5)}
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 };
 

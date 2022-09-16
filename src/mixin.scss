@@ -37,3 +37,8 @@
     line-height: 24px;
     color: #313037;
 }
+@mixin wrapper {
+    max-width: 1286px;
+    margin: 0 auto;
+    padding: 0 15px;
+}

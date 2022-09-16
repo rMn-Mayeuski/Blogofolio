@@ -1,37 +1,38 @@
 import React, { FC } from 'react';
-import ListPosts from './ListPosts';
-import {IPost} from "./ListPosts";
 import "../../App.scss";
 import styles from "./Test.module.scss";
+import MainPost from './MainPost/MainPost';
+import TabPost from './TabPost/TabPost';
+import SmalPost from './SmallPost/SmallPost';
 
-export interface PostsListProps {
-    posts: IPost[],
+type PostSizes = "Small" | "Tab" | "Main";
+
+export interface PostProps {
+    size: PostSizes;
 }
 
-const Test: FC<PostsListProps> = ({ posts }) => {
+export interface IPost {
+    id: number,
+    image: string,
+    description: string,
+    date: string,
+    title: string,
+}
 
-    const getPostCardSize = (index: number) => {
-        switch (index) {
-            case 0:
-                return "Main"
-            case 1:
-            case 2:
-                return "Tab"
-            case 3:
-            case 4:
-                return "Small"
-            default:
-                return "Main";
+const Test: FC<IPost & PostProps> = (props) => {
+    const renderPostCard = () => {
+        switch (props.size) {
+            case "Main":
+                return <MainPost {...props}/>
+            case "Tab":
+                return <TabPost {...props}/>
+            case "Small":
+                return <SmalPost {...props}/>
         }
     }
-
-    return (
-        <section className='list-post'>
-            <div className='wrapper'>
-                {posts.map((post, index) => <ListPosts {...post} key={post.id} size={getPostCardSize(index)} />)}
-            </div>
-        </section>
-    );
+    return renderPostCard()
+        
+    
 };
 
 export default Test;

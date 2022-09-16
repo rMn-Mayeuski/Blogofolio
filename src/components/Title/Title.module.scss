@@ -1,3 +1,9 @@
+@import "../../mixin.scss";
+
+.wrapper{
+    @include wrapper;
+}
+
 .title {
     font-family: 'Inter';
     font-style: normal;

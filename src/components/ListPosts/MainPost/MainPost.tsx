@@ -1,9 +1,9 @@
 import React from 'react';
 import ListPostsAction from '../ListPostsAction/ListPostsAction';
 import styles from "./MainPost.module.scss"
-import {IPost, PostProps} from "../ListPosts";
+import {IPost} from "../Test";
 
-const MainPost:React.FC<IPost & PostProps> = ({size, date, title, description, image}) => {    
+const MainPost:React.FC<IPost> = ({date, title, description, image}) => {    
     return (
         <div className={styles.mainPostContent}>
             <div className={styles.mainPostContentTop}>

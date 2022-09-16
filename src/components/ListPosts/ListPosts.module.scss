@@ -1,3 +1,8 @@
+@import "../../mixin.scss";
+
+.wrapper{
+    @include wrapper;
+}
 .listPostsContainer{
     margin-top: 64px;
     display: flex;
@@ -9,15 +14,10 @@
         align-items: center;
     }
 }
-
 .tabPostsContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     max-width: 736px;
-}
-
-.test{
-    max-width: 750px;
 }

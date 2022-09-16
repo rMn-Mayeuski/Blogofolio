@@ -5,7 +5,7 @@ import styles from "./Tabs.module.scss"
 const Tabs: React.FC = () => {
     return (
         <section className="tabs">
-            <div className='wrapper'>
+            <div className={styles.wrapper}>
                 <div className={styles.tabsContainer}>
                     <Tab title='All'/>
                     <Tab title='My favorites'/>

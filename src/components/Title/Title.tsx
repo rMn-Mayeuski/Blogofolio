@@ -8,7 +8,7 @@ interface Title {
 const Title: React.FC<Title> = ({title}) => {
     return (
         <section className='title'>
-            <div className='wrapper'>
+            <div className={styles.wrapper}>
                 <h1 className={styles.title}>
                     {title}
                 </h1>

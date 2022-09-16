@@ -23,7 +23,6 @@
 .mainPostContent{
     @include postContainer;
     max-width: 736px;
-    margin-bottom: 25px;
     &Top{
         display: flex;
         flex-direction: row;
