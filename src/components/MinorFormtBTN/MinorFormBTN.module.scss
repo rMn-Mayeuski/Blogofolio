@@ -1,0 +1,18 @@
+.minorBtn{
+    width: fit-content;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #313037;
+    &:hover{
+        color: #2231AA;
+    }
+    & span{
+        color: rgba(34, 49, 170, 1);
+    }
+}

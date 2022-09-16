@@ -15,4 +15,10 @@
     border: 1px solid #DADADA;
     padding: 40px;
     width: 624px;
+    &Bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+    }
 }

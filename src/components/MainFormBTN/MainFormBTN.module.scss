@@ -1,0 +1,23 @@
+.mainBtn{
+    cursor: pointer;
+    width: 100%;
+    height: 56px;
+    background: #2231AA;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    transition: 0.5s;
+    &:hover{
+        background: #5360CD;
+        transition: 0.5s;
+    }
+    &:disabled{
+        background: rgb(197, 197, 197);
+        color: #8D8E97;
+    }
+}
