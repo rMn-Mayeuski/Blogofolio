@@ -42,3 +42,21 @@
     margin: 0 auto;
     padding: 0 15px;
 }
+@mixin contentPageActionsBtn{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: none;
+    background: #cfcfcf;
+    border-radius: 2px;
+    padding: 17px 33px;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #313037;
+    cursor: pointer;
+    transition: 0.5s;
+}

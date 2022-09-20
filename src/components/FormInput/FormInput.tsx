@@ -1,18 +1,25 @@
 import React, { FC } from 'react';
 import styles from "./FormInput.module.scss";
 
-interface FormInput {
+export interface FormInputProps {
     label: string;
     placeholder: string;
     type: string;
     id: any;
+    value?: string;
+    onChange?: any;
 }
 
-const FormInput:FC<FormInput> = ({label, placeholder, id, type}) => {
+const FormInput:FC<FormInputProps> = ({label, placeholder, id, type, value, onChange}) => {
     return (
         <div className={styles.inputConteiner}>
             <label htmlFor={id}>{label}</label>
-            <input id={id} type={type} placeholder={placeholder} /> 
+            <input 
+            id={id} 
+            value={value}
+            type={type} 
+            placeholder={placeholder} 
+            onChange={onChange}/> 
         </div>
     );
 };

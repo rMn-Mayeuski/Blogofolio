@@ -23,7 +23,7 @@ const Test: FC<IPost & PostProps> = (props) => {
     const renderPostCard = () => {
         switch (props.size) {
             case "Main":
-                return <MainPost {...props}/>
+                return <MainPost to='/contentpage' {...props}/>
             case "Tab":
                 return <TabPost {...props}/>
             case "Small":

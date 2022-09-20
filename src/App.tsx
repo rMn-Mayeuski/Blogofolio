@@ -8,6 +8,7 @@ import SignInPage from './Pages/SignInPage/SignInPage';
 import Footer from './components/Footer/Footer';
 
 import "./App.scss";
+import ContentPage from './Pages/ContentPage/ContentPage';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
             <Route path='/' element={<MainPage/>}/>
             <Route path='/addpost' element={<AddPost/>}/>
             <Route path='/signin' element={<SignInPage/>}/>
+            <Route path='/contentpage' element={<ContentPage/>}/>
       </Routes>
       <Footer/>
     </>

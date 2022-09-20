@@ -1,0 +1,54 @@
+@import "../../../mixin.scss";
+
+.actionsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &Left{
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+    }
+    &BTN{
+        @include contentPageActionsBtn;
+        &Dislike{
+            @include contentPageActionsBtn;
+            &:hover{
+                background: #FD3419;
+                border-radius: 2px;
+                color: #FFFFFF;
+                transition: 0.5s;
+                & svg path{
+                    fill: white;
+                    transition: 0.5s;
+                } 
+            }
+            &:disabled{
+                color: #78768f;
+                background: rgb(197, 197, 197);
+                border-radius: 2px;
+                & svg path{
+                    fill: #78768f;
+                } 
+            }
+        }
+        &:hover{
+            background: #5360CD;
+            border-radius: 2px;
+            color: #FFFFFF;
+            transition: 0.5s;
+            & svg path{
+                fill: white;
+                transition: 0.5s;
+            } 
+        }
+        &:disabled{
+            color: #78768f;
+            background: rgb(197, 197, 197);
+            border-radius: 2px;
+            & svg path{
+                fill: #78768f;
+            } 
+        }
+    }
+}

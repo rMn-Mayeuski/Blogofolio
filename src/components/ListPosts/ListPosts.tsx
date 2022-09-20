@@ -9,10 +9,7 @@ interface PostsListProps {
 
 const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
     const handleSizeForCard = (index:number) => {
-        if(index === 0) {
-            return "Main"
-        }
-        else if (index >= 1 && index <= 4) {
+        if (index >= 1 && index <= 4) {
             return "Tab"
         }
         else {
@@ -23,24 +20,18 @@ const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
     return  (
                 <div className={styles.listPostsContainer}>
                     <div className={`${styles.listPostsContainerLeft}`}>
-                    {postsConfig
-                        .map((post, index) =>
-                            <Test key={post.id} id={post.id} title={post.title} date={post.date}
-                            image={post.image}  description={post.description} size={handleSizeForCard(index)}/>)
-                        .filter((post, index) => index === 0)}
+                    <Test {...postsConfig[0]} size={"Main"}/>
                         <div className={styles.tabPostsContainer}>
                         {postsConfig
                         .map((post, index) =>
-                            <Test key={post.id} id={post.id} title={post.title} date={post.date}
-                            image={post.image}  description={post.description} size={handleSizeForCard(index)}/>)
+                        <Test key={post.id} {...post} size={handleSizeForCard(index)}/>)
                         .filter((post, index) => index >= 1 && index <= 4 )}
                         </div>
                     </div>
                     <div className={styles.listPostsContainerRight}>
                         {postsConfig
                         .map((post, index) =>
-                            <Test key={post.id} id={post.id} title={post.title} date={post.date}
-                            image={post.image} description={post.description} size={handleSizeForCard(index)}/>)
+                            <Test key={post.id} {...post} size={handleSizeForCard(index)}/>)
                         .filter((post, index) => index >= 5)}
                     </div>
                 </div>
