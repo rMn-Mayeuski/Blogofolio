@@ -7,7 +7,7 @@ interface MainFormBTN{
 
 const MainFormBTN: React.FC<MainFormBTN> = ({text}) => {
     return (
-        <button className={styles.mainBtn} type='submit'>
+        <button  className={styles.mainBtn} type='submit'>
             {text}
         </button>
     );

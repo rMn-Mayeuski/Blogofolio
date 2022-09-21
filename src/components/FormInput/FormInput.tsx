@@ -14,7 +14,8 @@ const FormInput:FC<FormInputProps> = ({label, placeholder, id, type, value, onCh
     return (
         <div className={styles.inputConteiner}>
             <label htmlFor={id}>{label}</label>
-            <input 
+            <input
+            required 
             id={id} 
             value={value}
             type={type} 

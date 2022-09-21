@@ -10,7 +10,7 @@ const MainPage: React.FC = () => {
     const {results: posts} = data;
 
     return (
-        <main className='main-info'>
+        <main>
             <div className="wrapper">
                 <Title title='Blog'/>
                 <Tabs/>

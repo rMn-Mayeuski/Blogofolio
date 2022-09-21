@@ -19,16 +19,19 @@ const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
         className={active ? styles.burgerMenuActive : styles.burgerMenu}
         onClick={() => setActive(false)}>
             <div className={styles.burgerMenuContent} onClick={e => e.stopPropagation()}>
-                <UserInfo  name='Raman' lastName='Mayeuski' avatar={avatar}/>
+
+                <div className={styles.burgerMenuUserInfo}>
+                    <UserInfo  name='Guest' lastName='' avatar={avatar}/>
+                </div>
                 
                     <BurgerMenuBtn to='/addpost' title='Add post'/>
-                    <BurgerMenuBtn to='/' title='Home'/>
+                    <BurgerMenuBtn to='/home' title='Home'/>
                 
                 <div className={styles.burgerMenuThemSwitch}>
                     <BurgerMenuBtnThemSwitch ico={icoSun}/>
                     <BurgerMenuBtnThemSwitch ico={icoDark}/>
                 </div>
-                <BurgerMenuBtn to='/signin' title='Log Out'/>
+                <BurgerMenuBtn to='/signin' title='Sign In'/>
             </div>
         </div>
     );

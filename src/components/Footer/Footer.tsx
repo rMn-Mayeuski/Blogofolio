@@ -4,8 +4,8 @@ import styles from "./Footer.module.scss"
 
 const Footer: React.FC = () => {
     return (
-        <footer className='footer'>
-            <div className="wrapper">
+        <footer>
+            <div className={styles.wrapper}>
                 <div className={styles.footerContent}>
                     <p>©2022 Blogfolio</p>
                     <p>All rights reserved</p>

@@ -5,6 +5,7 @@ import FormInput from '../../components/FormInput/FormInput';
 import MinorFormBTN from '../../components/MinorFormtBTN/MinorFormBTN';
 import MainFormBTN from '../../components/MainFormBTN/MainFormBTN';
 import { FormInputProps } from '../../components/FormInput/FormInput';
+import { NavLink } from 'react-router-dom';
 
 
 const SignInPage: React.FC = () => {
@@ -22,7 +23,7 @@ const SignInPage: React.FC = () => {
                     <MinorFormBTN text='Forgot password?'/>
                     <div className={styles.formContainerBottom}>
                         <MainFormBTN text='Sign In'/>
-                        <MinorFormBTN text='Don’t have an account?' colorText='Sign Up'/>
+                        <NavLink to="/signup"><MinorFormBTN text='Don’t have an account?' colorText='Sign Up'/></NavLink>
                     </div>
                 </form>
             </div>

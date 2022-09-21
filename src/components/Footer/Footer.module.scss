@@ -1,5 +1,9 @@
 @import "../../mixin.scss";
 
+.wrapper{
+    @include wrapper;
+}
+
 .footerContent{
     display: flex;
     flex-direction: row;

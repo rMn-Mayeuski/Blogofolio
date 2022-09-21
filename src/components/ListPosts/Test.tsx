@@ -17,6 +17,7 @@ export interface IPost {
     description: string,
     date: string,
     title: string,
+    text: string,
 }
 
 const Test: FC<IPost & PostProps> = (props) => {
