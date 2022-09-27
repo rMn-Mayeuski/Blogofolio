@@ -1,4 +1,4 @@
-.mainPostContentBottom{
+.listPostAction{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -6,19 +6,28 @@
     &Left{
         display: flex;
         gap: 50px;
-        & img{
+        & button{
+            border: none;
             cursor: pointer;
             height: 24px;
             width: 24px;
+            background: var(#{--body-background-default});
+        }   & svg path {
+            fill: var(#{--text-color-default});
         }
     }
     &Right{
         display: flex;
         gap: 30px;
-        & img{
+        & button{
+            border: none;
             cursor: pointer;
             height: 24px;
             width: 24px;
+            background: var(#{--body-background-default});
+            & svg path {
+                fill: var(#{--text-color-default});
+            }
         }
     }
 }

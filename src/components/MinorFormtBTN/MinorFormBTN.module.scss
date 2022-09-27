@@ -8,7 +8,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-    color: #313037;
+    color: var(#{--text-color-default});
     &:hover{
         color: #2231AA;
     }

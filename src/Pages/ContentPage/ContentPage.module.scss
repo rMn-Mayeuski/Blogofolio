@@ -23,7 +23,7 @@
         color: #8D8E97;
     }
     & a{
-        color: #313037;
+        color: var(#{--text-color-default});
     }
     & span{
         border: 1px solid #8D8E97;;
@@ -45,5 +45,5 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 32px;
-    color: #313037;
+    color: var(#{--text-color-default});
 }

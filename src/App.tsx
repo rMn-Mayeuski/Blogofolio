@@ -1,4 +1,4 @@
-import  React from 'react';
+import  React, { useContext } from 'react';
 import { Route, Routes,} from "react-router-dom";
 import data from "./SharedLogic/ProjectDate.json";
 
@@ -12,6 +12,8 @@ import Footer from './components/Footer/Footer';
 
 import "./App.scss";
 
+
+
 const App: React.FC = () => {
 
   const {results: posts} = data;
@@ -19,6 +21,7 @@ const App: React.FC = () => {
   return (
     <>
       <Header/>
+      
       <Routes> 
             <Route path='/' element={<SignInPage/>}/>
             <Route path='/signin' element={<SignInPage/>}/>
@@ -28,6 +31,7 @@ const App: React.FC = () => {
             <Route path='/signup' element={<SingUpPage/>}/>
       </Routes>
       <Footer/>
+      
     </>
   );
 };

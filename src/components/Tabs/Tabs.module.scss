@@ -5,7 +5,7 @@
     border-bottom: 1px solid rgba(218, 218, 218, 1);
     & button{
         @include mainPageBtn;
-        background-color: #E5E5E5;
+        background-color: var(#{--body-background-default});
         padding: 0 40px;
         border: none;
         &:hover{
@@ -23,7 +23,7 @@
     top: 63px;
     width: 0;
     height: 3px; /* Высота линии */
-    background-color: rgba(49, 48, 55, 1); /* Цвет подчеркивания при исчезании линии*/
+    background-color: var(#{--text-color-default}); /* Цвет подчеркивания при исчезании линии*/
     transition: width 0.5s; /* Время эффекта */
 }
     &:hover:after {
@@ -34,7 +34,7 @@
     left: 0;
     top: 63px;
     height: 3px; /* Высота линии */
-    background-color: rgba(49, 48, 55, 1); /* Цвет подчеркивания при появлении линии*/
+    background-color: var(#{--text-color-default}); /* Цвет подчеркивания при появлении линии*/
     transition: width 0.5s;  /* Время эффекта */
 }
 }

@@ -8,8 +8,28 @@
     list-style-type: none;
 }
 
+body{
+    background: var(#{--body-background-default});
+}
+
 .wrapper {
     max-width: 1286px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+$body-background-dark: #313037; 
+$body-background-light: #E5E5E5; 
+
+$text-color-dark: #FFFFFF; 
+$text-color-light: #313037; 
+
+:root {
+    --body-background-dark: #{$body-background-dark}; 
+    --body-background-light: #{$body-background-light};
+    --body-background-default: var(#{--body-background-dark});  
+
+    --text-color-dark: #{$text-color-dark}; 
+    --text-color-light: #{$text-color-light}; 
+    --text-color-default: var(#{--text-color-dark});  
 }

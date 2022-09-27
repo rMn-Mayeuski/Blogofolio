@@ -19,7 +19,7 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 28px;
-    color: #313037;
+    color: var(#{--text-color-default});
 }
 @mixin postContainer {
     display: flex;
@@ -35,7 +35,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-    color: #313037;
+    color: var(#{--text-color-default});
 }
 @mixin wrapper {
     max-width: 1286px;

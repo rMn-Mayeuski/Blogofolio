@@ -18,7 +18,7 @@ const ContentPage: React.FC<ContentPageProps> = ({posts=[], selectedPost}) => {
                 .map(post =>
                 <div key={post.id} className={styles.contentPageContainer}>
                     <div className={styles.contentPageNav}>
-                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/home">Home</NavLink>
                         <span></span>
                         <p>Post {post.id}</p>
                     </div>

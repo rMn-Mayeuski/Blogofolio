@@ -9,7 +9,7 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 44px;
-    color: #313037;
+    color: var(#{--text-color-default});
     margin: 8px 0 24px 0;
 }
 .mainPostText{
