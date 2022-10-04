@@ -6,6 +6,7 @@
     & button{
         @include mainPageBtn;
         background-color: var(#{--body-background-default});
+        background-color: inherit;
         padding: 0 40px;
         border: none;
         &:hover{

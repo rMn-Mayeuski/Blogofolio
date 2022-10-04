@@ -26,21 +26,25 @@ const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
     return (
         <div 
         className={active ? styles.burgerMenuActive : styles.burgerMenu}
-        onClick={() => setActive(false)}>
+        onClick={() => setActive(!false)}>
             <div className={styles.burgerMenuContent} onClick={e => e.stopPropagation()}>
 
-                <div className={styles.burgerMenuUserInfo}>
-                    <UserInfo  name='Guest' lastName='' avatar={avatar}/>
-                </div>
-                
+                <div className={styles.burgerMenuContentTop}>
+                    <div className={styles.burgerMenuUserInfo}>
+                        <UserInfo  name='Guest' lastName='' avatar={avatar}/>
+                    </div>
                     <BurgerMenuBtn to='/addpost' title='Add post'/>
                     <BurgerMenuBtn to='/home' title='Home'/>
-                
-                <div className={styles.burgerMenuThemSwitch} onClick={changeTheme}>
-                    <BurgerMenuBtnThemSwitch ico={icoSun}/>
-                    <BurgerMenuBtnThemSwitch ico={icoDark}/>
                 </div>
-                <BurgerMenuBtn to='/signin' title='Sign In'/>
+                
+                <div className={styles.burgerMenuContentBottom}>
+                    <div className={styles.burgerMenuThemSwitch} onClick={changeTheme}>
+                        <BurgerMenuBtnThemSwitch ico={icoSun}/>
+                        <BurgerMenuBtnThemSwitch ico={icoDark}/>
+                    </div>
+                    <BurgerMenuBtn to='/signin' title='Sign In'/>
+                </div>
+
             </div>
         </div>
     );

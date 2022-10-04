@@ -9,6 +9,13 @@
     transition: 0.6s;
     z-index: 2;
     width: 236px;
+    &Content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100vh - 84px);
+        background: #FFFFFF;
+    }
     &Active{
         display: flex;
         flex-direction: column;

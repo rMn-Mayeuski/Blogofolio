@@ -3,7 +3,12 @@ import ListPostsAction from '../ListPostsAction/ListPostsAction';
 import styles from "./SmallPost.module.scss"
 import {IPost} from "../Test";
 
-const SmalPost: React.FC<IPost> = ({image, title, date, id}) => {
+const SmalPost: React.FC<IPost> = ({
+    id,
+    date="April 20, 2021",
+    title="Astronauts prep for new solar arrays on nearly seven-hour spacewalk",  
+    image="https://www.google.by/url?sa=i&url=https%3A%2F%2Fscienceandtech.ru%2Farticles%2Ffioletovyj-kosmos%2F&psig=AOvVaw15hNFOJR7Hhndl78m92Hoq&ust=1664965156838000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCPi8-NysxvoCFQAAAAAdAAAAABAD", 
+}) => {
     return (
         <div className={styles.smallPostContainer}>
             <div className={styles.smallPostContainerTop}>

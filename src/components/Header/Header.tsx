@@ -14,7 +14,7 @@ const Header: React.FC = () => {
                 <div className={styles.headerContainer}>
                     <div 
                     className={styles.headerBurger}
-                    onClick= {() => setMenuActive(!menuActive)}
+                    onClick= {() => setMenuActive(prev => !prev)}
                     >
                         <span></span>
                     </div>

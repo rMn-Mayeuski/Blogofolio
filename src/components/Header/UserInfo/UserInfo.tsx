@@ -7,7 +7,7 @@ interface UserInfo {
     avatar?: any;
 }
 
-const UserInfo: React.FC<UserInfo> = ({name, lastName, avatar}) => {
+const UserInfo: React.FC<UserInfo> = ({name="Guest", lastName="", avatar}) => {
     return (
         <div className={styles.headerUser}>
             {/* <img src={avatar} alt="logo" /> */}

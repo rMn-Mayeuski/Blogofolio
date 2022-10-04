@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React, { ChangeEventHandler, FC } from 'react';
 import styles from "./FormInput.module.scss";
 
 export interface FormInputProps {
     label: string;
     placeholder: string;
     type: string;
-    id: any;
+    id: string;
     value?: string;
-    onChange?: any;
+    onChange?: ChangeEventHandler;
 }
 
 const FormInput:FC<FormInputProps> = ({label, placeholder, id, type, value, onChange}) => {
