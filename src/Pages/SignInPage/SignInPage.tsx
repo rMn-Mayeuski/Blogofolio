@@ -11,6 +11,7 @@ const SignInPage: React.FC = () => {
         <div className={styles.wrapper}> 
             <div className={styles.signInPageContainer}>
                 <Title title='Sign In'/>
+
                 <form  
                     className={styles.formContainer} 
                 >

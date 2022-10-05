@@ -11,6 +11,7 @@ import SingUpPage from './Pages/SingUpPage/SingUpPage';
 import Footer from './components/Footer/Footer';
 
 import "./App.scss";
+import SearchPage from './Pages/SearchPage/SearchPage';
 
 
 
@@ -27,6 +28,7 @@ const App: React.FC = () => {
             <Route path='/signin' element={<SignInPage/>}/>
             <Route path='/addpost' element={<AddPost/>}/>
             <Route path='/home' element={<MainPage/>}/>
+            <Route path='/searchpage' element={<SearchPage/>}/>
             <Route path='/contentpage' element={<ContentPage posts={posts} selectedPost={1}/>}/>
             <Route path='/signup' element={<SingUpPage/>}/>
       </Routes>

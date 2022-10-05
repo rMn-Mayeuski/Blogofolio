@@ -18,7 +18,7 @@ const FormInput:FC<FormInputProps> = ({label, placeholder, id, type, value, onCh
             required 
             id={id} 
             value={value}
-            type={type} 
+            type={type}
             placeholder={placeholder} 
             onChange={onChange}/> 
         </div>

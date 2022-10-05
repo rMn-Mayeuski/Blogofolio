@@ -1,0 +1,31 @@
+@import "../../mixin.scss";
+
+.wrapper{
+    @include wrapper;
+}
+.serachPageContent{
+    &Card{
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        border-bottom: 2px solid #DADADA;
+        &Top{
+            display: flex;
+            flex-direction: row;
+            max-width: 1120px;
+            & img{
+                margin-right: 32px;
+                object-fit: cover;
+                height: 96px;
+                width: 96px;
+            }
+            &Text{
+                &Date{
+                    @include postDate;
+                }
+                &Title{
+                    @include tabPostTitle;
+                }
+            }
+        }
+    }
+}
