@@ -1,0 +1,15 @@
+.homeLink{
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+    width: 86%;
+    margin-top: 72px;
+    a {
+        font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #313037;
+    }
+}

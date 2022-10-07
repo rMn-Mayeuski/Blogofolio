@@ -60,3 +60,11 @@
     cursor: pointer;
     transition: 0.5s;
 }
+@mixin formLabel {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(#{--text-color-default});
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactEventHandler, ReactNode, useEffect, useState } from 'react';
 import UserInfo from '../UserInfo/UserInfo';
 import styles from "../BurgerMenu/BurgerMenu.module.scss";
 import avatar from "../../../img/Tomas.jpg";
@@ -15,7 +15,7 @@ interface MenuСondition {
     setActive: any;
 }
 
-const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
+const BurgerMenu: React.FC<MenuСondition> = (props) => {
 
     const theme = useTheme();
 
@@ -23,10 +23,12 @@ const BurgerMenu: React.FC<MenuСondition> = ({active, setActive}) => {
         theme.changeTheme(theme.theme === Theme.DARK ? Theme.LIGHT : Theme.DARK)
     }
 
+    const handlerStylesBurgerMenu = props.active ? styles.burgerMenuActive : styles.burgerMenu;
+
     return (
         <div 
-        className={active ? styles.burgerMenuActive : styles.burgerMenu}
-        onClick={() => setActive(!false)}>
+        className={handlerStylesBurgerMenu}
+        onClick={() => props.setActive(!false)}>
             <div className={styles.burgerMenuContent} onClick={e => e.stopPropagation()}>
 
                 <div className={styles.burgerMenuContentTop}>

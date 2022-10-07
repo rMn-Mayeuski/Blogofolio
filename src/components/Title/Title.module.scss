@@ -10,4 +10,8 @@
     margin: 72px 0 47px;
     text-align: center;
     color: var(#{--text-color-default});
+    @media (max-width: 607px) {
+        font-size: 32px;
+        line-height: 48px;
+    }
 }

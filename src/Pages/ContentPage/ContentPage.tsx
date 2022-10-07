@@ -6,31 +6,28 @@ import {IPost} from "../../components/ListPosts/Test";
 import { NavLink } from 'react-router-dom';
 
 interface ContentPageProps {
-    posts: IPost[];
-    selectedPost: number;
+    posts: IPost | null;
 }
 
-const ContentPage: React.FC<ContentPageProps> = ({posts=[], selectedPost}) => {
+const ContentPage: React.FC<ContentPageProps> = ({posts = null}) => {
     return (
         <article>
             <div className={styles.wrapper}>
-            {posts.filter(post => post.id === selectedPost)
-                .map(post =>
-                <div key={post.id} className={styles.contentPageContainer}>
+                <div key={!!posts ? posts.id : "err"} className={styles.contentPageContainer}>
                     <div className={styles.contentPageNav}>
                         <NavLink to="/home">Home</NavLink>
                         <span></span>
-                        <p>Post {post.id}</p>
+                        <p>Post {!!posts && posts.id}</p>
                     </div>
-                    <Title title={post.title}/>
-                    <img className={styles.contentPageImg} src={post.image} alt="astronaut" />
+                    <Title title={!!posts ? posts.title : "err"}/>
+                    <img className={styles.contentPageImg} src={!!posts ? posts.image : "err"} alt="astronaut" />
                     <div className={styles.contentPageTextContainer}>
                         <p className={styles.contentPageText}>
-                            {post.text}
+                            {!!posts && posts.text}
                         </p>
                         <ContentPageActions/>
                     </div>
-                </div>)}
+                </div>
             </div>
         </article>
     );

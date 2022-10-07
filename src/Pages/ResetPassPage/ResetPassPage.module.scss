@@ -1,0 +1,23 @@
+@import "../../mixin.scss";
+
+.wrapper{
+    @include wrapper;
+}
+.resetPassPageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &Form{
+        padding: 40px;
+        border: 2px solid #DADADA;
+        width: 624px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        @media (max-width: 667px) {
+            width: 272px;
+            padding: 24px;
+            gap: 36px;
+        }
+    }
+}

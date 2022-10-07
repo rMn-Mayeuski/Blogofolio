@@ -8,13 +8,15 @@ const Header: React.FC = () => {
 
     const [menuActive, setMenuActive] = useState(false);
 
+    const burgerMenuActive = () => setMenuActive(prev => !prev)
+
     return (
         <header className={styles.header}>
-            <div className={styles.wrapper}>
+            {/* <div className={styles.wrapper}> */}
                 <div className={styles.headerContainer}>
                     <div 
                     className={styles.headerBurger}
-                    onClick= {() => setMenuActive(prev => !prev)}
+                    onClick= {burgerMenuActive}
                     >
                         <span></span>
                     </div>
@@ -30,7 +32,7 @@ const Header: React.FC = () => {
                     <UserInfo name='Guest' lastName='' avatar={avatar}/>
                     <BurgerMenu active={menuActive} setActive={setMenuActive}/>
                 </div>
-            </div>
+            {/* </div> */}
         </header>
     );
 };

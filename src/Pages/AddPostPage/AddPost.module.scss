@@ -1,0 +1,160 @@
+@import "../../mixin.scss";
+
+.wrapper{
+    @include wrapper;
+}
+.addPostConteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &Form{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        @media (max-width: 1167px) {
+            align-items: center;
+        }
+        &Top{
+            display: flex;
+            gap: 32px;
+            @media (max-width: 1167px) {
+                flex-direction: column;
+            }
+            & input{
+                width: 544px;
+                @media (max-width: 1167px) {
+                    width: 688px;
+                }
+                @media (max-width: 722px) {
+                    width: 272px;
+                }
+            }
+        }
+        &Bottom{
+            display: flex;
+            gap: 32px;
+            @media (max-width: 1167px) {
+                flex-direction: column;
+            }
+            & input{
+                width: 544px;
+                background: white;
+                @media (max-width: 1167px) {
+                    width: 688px;
+                }
+                @media (max-width: 722px) {
+                    width: 272px;
+                }
+            }
+        }
+        &Description{
+            display: flex;
+            flex-direction: column;
+            & label{
+                @include formLabel;
+                margin-bottom: 8px;
+            }
+            & textarea{
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                color: #8D8E97;
+                padding: 20px;
+                border: none;
+                outline: none;
+                height: 98px;
+                @media (max-width: 1167px) {
+                    width: 688px;
+                }
+                @media (max-width: 722px) {
+                    width: 272px;
+                }
+            }
+        }
+        &Text{
+            display: flex;
+            flex-direction: column;
+            & label{
+                @include formLabel;
+                margin-bottom: 8px;
+            }
+            & textarea{
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                color: #8D8E97;
+                padding: 20px;
+                border: none;
+                outline: none;
+                height: 245px;
+                @media (max-width: 1167px) {
+                    width: 688px;
+                }
+                @media (max-width: 722px) {
+                    width: 272px;
+                }
+            }
+        }
+        &Btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            @media (max-width: 722px) {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+            &Del{
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 24px;
+                color: #FD3419;
+                background: inherit;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 16px;
+                @media (max-width: 722px) {
+                    width: 100%;
+                    order: 3;
+                }
+            }
+            &Left{
+                display: flex;
+                flex-direction: row;
+                gap: 24px;
+                @media (max-width: 722px) {
+                    flex-direction: column;
+                    width: 100%;
+                }
+                &Cancel{
+                    border: none;
+                    outline: none;font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: #78768f;
+                    cursor: pointer;
+                    padding: 16px;
+                    @media (max-width: 722px) {
+                        order: 2;
+                    }
+                }
+                & button{
+                    width: 143px;
+                    @media (max-width: 722px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -15,6 +15,11 @@
     border: 1px solid #DADADA;
     padding: 40px;
     width: 624px;
+    @media (max-width: 667px) {
+        width: 272px;
+        padding: 24px;
+        gap: 36px;
+    }
     &Bottom{
         display: flex;
         flex-direction: column;

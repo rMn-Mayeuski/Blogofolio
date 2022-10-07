@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./Title.module.scss"
 
 interface Title {
-    title: string;
+    title: any;
 }
 
 const Title: React.FC<Title> = ({title}) => {

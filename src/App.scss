@@ -18,6 +18,10 @@ body{
     padding: 0 15px;
 }
 
+textarea{
+    resize: none;
+}
+
 $body-background-dark: #313037; 
 $body-background-light: #E5E5E5; 
 
