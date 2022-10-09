@@ -1,4 +1,4 @@
-import React, { ReactEventHandler, ReactNode, useEffect, useState } from 'react';
+import React, { MouseEventHandler, ReactEventHandler, ReactNode, useEffect, useState } from 'react';
 import UserInfo from '../UserInfo/UserInfo';
 import styles from "../BurgerMenu/BurgerMenu.module.scss";
 import avatar from "../../../img/Tomas.jpg";
@@ -9,10 +9,9 @@ import BurgerMenuBtnThemSwitch from './BurgerMenuBtnThemSwitch/BurgerMenuBtnThem
 import { useTheme } from '../../../provider/ThemeProvider';
 import { Theme } from '../../../context/ThemeContext';
 
-
 interface MenuСondition {
-    active: any;
-    setActive: any;
+    change?: boolean
+    onClick: MouseEventHandler;
 }
 
 const BurgerMenu: React.FC<MenuСondition> = (props) => {
@@ -23,12 +22,12 @@ const BurgerMenu: React.FC<MenuСondition> = (props) => {
         theme.changeTheme(theme.theme === Theme.DARK ? Theme.LIGHT : Theme.DARK)
     }
 
-    const handlerStylesBurgerMenu = props.active ? styles.burgerMenuActive : styles.burgerMenu;
+    const handlerStylesBurgerMenu = props.change ? styles.burgerMenuActive : styles.burgerMenu;
 
     return (
         <div 
         className={handlerStylesBurgerMenu}
-        onClick={() => props.setActive(!false)}>
+        onClick={props.onClick}>
             <div className={styles.burgerMenuContent} onClick={e => e.stopPropagation()}>
 
                 <div className={styles.burgerMenuContentTop}>
