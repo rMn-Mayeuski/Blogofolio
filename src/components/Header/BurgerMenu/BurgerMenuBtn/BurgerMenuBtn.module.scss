@@ -3,10 +3,16 @@
 .burgerMenuBtn{
     @include mainPageBtn;
     outline: none;
-    border: 1px solid rgba(232, 232, 232, 1);
+    border: none;
+    border-top: 1px solid rgba(232, 232, 232, 1);
+    border-bottom: 1px solid rgba(232, 232, 232, 1);
     padding: 28px 0;
     text-align: center;
     width: 100%;
+    background: var(#{--burger-background-default});
+    & a{
+        color: var(#{--text-color-default});
+    }
     &:hover{
         color: rgba(34, 49, 170, 1);
     }

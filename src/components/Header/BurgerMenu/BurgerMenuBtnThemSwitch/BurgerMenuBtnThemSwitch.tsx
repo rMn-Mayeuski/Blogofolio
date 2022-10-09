@@ -2,13 +2,13 @@ import React from 'react';
 import styles from "./BurgerMenuBtnThemSwitch.module.scss"
 
 interface ThemSwitchBtn {
-    ico?: any;
+    svg: any;
 }
 
-const BurgerMenuBtnThemSwitch: React.FC<ThemSwitchBtn> = ({ico}) => {
+const BurgerMenuBtnThemSwitch: React.FC<ThemSwitchBtn> = ({svg}) => {
     return (
         <button className={styles.themSwitchBtn}>
-            <img src={ico} alt="logo" />
+            {svg}
         </button>
     );
 };

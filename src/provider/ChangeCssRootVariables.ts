@@ -5,6 +5,7 @@
 
         const themeVariables = [
             `body-background`,
+            `burger-background`,
             `text-color`,
         ];
 

@@ -16,9 +16,9 @@ const MainPost:React.FC<IPost> = ({
     const handlePostPageOpen = () => navigate(`/contentpage/${id}`)
 
     return (
-        <div className={styles.mainPostContent} onClick={handlePostPageOpen}>
+        <div className={styles.mainPostContent}>
                 <div className={styles.mainPostContentTop}>
-                    <div className={styles.mainPostContentLeft}>
+                    <div className={styles.mainPostContentLeft} onClick={handlePostPageOpen}>
                         <p className={styles.date}>{date}</p>
                         <h2 className={styles.mainPostTitle}>{title}</h2>
                         <p className={styles.mainPostText}>{description}</p>

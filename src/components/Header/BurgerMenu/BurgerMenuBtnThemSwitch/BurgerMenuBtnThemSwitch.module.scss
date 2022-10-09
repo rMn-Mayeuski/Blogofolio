@@ -6,10 +6,14 @@
     line-height: 24px;
     color: rgb(49, 48, 55);
     outline: none;
-    background-color: white;
+    background: var(#{--burger-background-default});
     border: 1px solid rgb(232, 232, 232);
+    border-right: none;
     padding: 25px 0;
     text-align: center;
     width: 100%;
     cursor: pointer;
+    & svg path{
+        fill: var(--text-color-default);
+    }
 }

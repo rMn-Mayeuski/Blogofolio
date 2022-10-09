@@ -15,9 +15,9 @@ const SmalPost: React.FC<IPost> = ({
     const handlePostPageOpen = () => navigate(`/contentpage/${id}`)
 
     return (
-        <div className={styles.smallPostContainer} onClick={handlePostPageOpen}>
+        <div className={styles.smallPostContainer}>
             <div className={styles.smallPostContainerTop}>
-                <div className={styles.smallPostContainerLeft}>
+                <div className={styles.smallPostContainerLeft} onClick={handlePostPageOpen}>
                     <p className={styles.date}>{date}</p>
                     <h3 className={styles.smallPostTitle}>{title}</h3>
                 </div>

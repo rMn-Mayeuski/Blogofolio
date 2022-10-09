@@ -15,11 +15,13 @@ const TabPost: React.FC<IPost> = ({
     const handlePostPageOpen = () => navigate(`/contentpage/${id}`)
 
     return (
-        <div  className={styles.tabPostContent} onClick={handlePostPageOpen}>
+        <div  className={styles.tabPostContent}>
             <div className={styles.tabPostContentTop}>
                 <img src={image} alt="img" />
-                <p className={styles.date}>{date}</p>
-                <h3 className={styles.tabPostTitle}>{title}</h3>
+                <div className={styles.tabPostContentText} onClick={handlePostPageOpen}>
+                    <p className={styles.date}>{date}</p>
+                    <h3 className={styles.tabPostTitle}>{title}</h3>
+                </div>
             </div>
             <ListPostsAction/>
         </div>
