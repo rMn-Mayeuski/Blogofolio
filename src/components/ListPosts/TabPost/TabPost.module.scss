@@ -1,13 +1,17 @@
-@import "../../../mixin.scss";
+@import "../../../App/mixin.scss";
 
 .tabPostContent{
     @include postContainer;
     max-width: 352px;
     margin: 21px 0 0 0;
+    &Text{
+        cursor: pointer;
+    }
     &Top img{
         height: 246px;
         width: 352px;
         object-fit: cover;
+        cursor: pointer;
     }
 }
 .date {

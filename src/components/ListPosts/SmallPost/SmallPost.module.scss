@@ -1,4 +1,4 @@
-@import "../../../mixin.scss";
+@import "../../../App/mixin.scss";
 
 .smallPostContainer{
     @include postContainer;
@@ -10,11 +10,13 @@
     }
     &Left{
         margin-right: 34px;
+        cursor: pointer;
     }
     &Right img{
         height: 96px;
         width: 96px;
         object-fit: cover;
+        cursor: pointer;
     }
 }
 .date{

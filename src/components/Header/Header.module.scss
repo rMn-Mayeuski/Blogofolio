@@ -1,9 +1,8 @@
-@import "../../mixin.scss";
+@import "../../App/mixin.scss";
 
 .wrapper{
     @include wrapper;
 }
-
 .header{
     position: sticky;
     top: 0;
@@ -47,7 +46,7 @@
     }
     &Search{
         height: 100%;
-        width: 75%;
+        width: 90%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -78,6 +77,7 @@
         & button{
             height: 100%;
             width: 86px;
+            padding: 30px 36px 36px 30px;
             background-color :#2231AA;;
             border: none;
             border-right: 2px solid #5360CD;
@@ -92,11 +92,6 @@
         cursor: pointer;
         padding: 17.5px 0;
         width: 236px;
-        & img{
-            margin: 0 16px 0 30px;
-            height: 48px;
-            width: 48px;
-        }
         & p{
             font-family: 'Inter';
             font-style: normal;

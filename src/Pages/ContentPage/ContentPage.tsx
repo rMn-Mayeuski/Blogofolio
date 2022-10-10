@@ -2,7 +2,7 @@ import React from 'react';
 import Title from '../../components/Title/Title';
 import styles from "./ContentPage.module.scss"
 import ContentPageActions from './ContentPageActions/ContentPageActions';
-import {IPost} from "../../components/ListPosts/Test";
+import {IPost} from "../../components/ListPosts/RenderPostCard/RenderPostCard";
 import { NavLink } from 'react-router-dom';
 
 export interface ContentPageProps {

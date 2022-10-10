@@ -1,9 +1,14 @@
-@import "../../../mixin.scss";
+@import "../../../App/mixin.scss";
 
 .actionsContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media (max-width: 497px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
     &Left{
         display: flex;
         flex-direction: row;

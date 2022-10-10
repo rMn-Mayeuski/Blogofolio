@@ -1,0 +1,35 @@
+@import "../../App/mixin.scss";
+
+.modalWindow{
+    &Wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &Container{
+        position: relative;
+        padding: 82px 77px 53px;
+        background: var(#{--body-background-default});
+        &Cross{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+        & svg path{
+            fill: var(--text-color-default);
+        }
+    }
+    &Content{
+        @include postContainer;
+        max-width: 736px;
+        background: var(#{--body-background-default});
+    }
+}
+

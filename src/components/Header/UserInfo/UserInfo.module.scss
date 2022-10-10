@@ -1,0 +1,43 @@
+.userInfoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 82px;
+    text-decoration: unset;
+    background: inherit;
+    @media (max-width: 457px) {
+        display: none;
+    }
+}
+.userInfoWrapper.user {
+    width: 236px;
+    & a{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 34px;
+        color: #FFFFFF;
+    }
+}
+.userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: #FFFFFF;
+    white-space: nowrap;
+    padding: 15px;
+}
+.userAvatar{
+    border-radius: 2px;
+    padding: 7px 10px;
+    background: #5360CD;
+    & img{
+        display: block;
+        width: 34px;
+        height: 34px;
+        object-fit: cover;
+    }
+}

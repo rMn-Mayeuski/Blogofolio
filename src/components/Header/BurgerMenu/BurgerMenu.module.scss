@@ -15,6 +15,7 @@
         justify-content: space-between;
         height: calc(100vh - 86px);
         background: var(#{--burger-background-default});
+        width: 236px;
     }
     &Active{
         display: flex;

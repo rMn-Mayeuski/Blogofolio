@@ -1,18 +1,32 @@
 import React from 'react';
-import styles from "../Header.module.scss";
+import { Link } from 'react-router-dom';
+import styles from "./UserInfo.module.scss";
+import Avatar from './Avatar/Avatar';
 
 interface UserInfo {
-    name: string;
-    lastName: string;
-    avatar?: any;
+    userName?: string;
+    avatarUrl?: string;
+    className?: string;
 }
 
-const UserInfo: React.FC<UserInfo> = ({name="Guest", lastName="", avatar}) => {
+const UserInfo: React.FC<UserInfo> = (
+    {
+        userName="", 
+        avatarUrl="",
+        className="", 
+    }) => {
     return (
-        <div className={styles.headerUser}>
-            {/* <img src={avatar} alt="logo" /> */}
-            <p>{name} {lastName}</p>
-        </div>
+        <div className={`${styles.userInfoWrapper} ${!!userName && styles.user} ${className}`}>
+                <Link to={!!userName ? "/home" : "/signin"}>
+                    <div className={styles.userInfo}>
+                        <Avatar 
+                            userName={userName} 
+                            url={avatarUrl} 
+                        />
+                        {!!userName && <span className={styles.userName}>{userName}</span>}
+                    </div>
+                </Link>
+            </div>
     );
 };
 

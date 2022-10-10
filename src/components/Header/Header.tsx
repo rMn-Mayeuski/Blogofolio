@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from "./Header.module.scss"
 import UserInfo from './UserInfo/UserInfo';
-import avatar from "../../img/Tomas.jpg"
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 
 const Header: React.FC = () => {
@@ -28,7 +27,10 @@ const Header: React.FC = () => {
                             </svg>
                         </button>
                     </div>
-                    <UserInfo name='Guest' lastName='' avatar={avatar}/>
+                    <UserInfo 
+                        userName={'Raman Mayeuski'}
+                        avatarUrl={""}
+                    />
                     <BurgerMenu change={menuActive} onClick={burgerMenuActive}/>
                 </div>
         </header>

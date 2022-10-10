@@ -1,9 +1,6 @@
 import React, { MouseEventHandler, ReactEventHandler, ReactNode, useEffect, useState } from 'react';
 import UserInfo from '../UserInfo/UserInfo';
 import styles from "../BurgerMenu/BurgerMenu.module.scss";
-import avatar from "../../../img/Tomas.jpg";
-import icoDark from "../../../img/Dark.svg";
-import icoSun from "../../../img/Sun.svg";
 import BurgerMenuBtn from './BurgerMenuBtn/BurgerMenuBtn';
 import BurgerMenuBtnThemSwitch from './BurgerMenuBtnThemSwitch/BurgerMenuBtnThemSwitch';
 import { useTheme } from '../../../provider/ThemeProvider';
@@ -32,7 +29,7 @@ const BurgerMenu: React.FC<MenuСondition> = (props) => {
 
                 <div className={styles.burgerMenuContentTop}>
                     <div className={styles.burgerMenuUserInfo}>
-                        <UserInfo  name='Guest' lastName='' avatar={avatar}/>
+                        <UserInfo userName='Raman Mayeuski'/>
                     </div>
                     <BurgerMenuBtn to='/addpost' title='Add post'/>
                     <BurgerMenuBtn to='/home' title='Home'/>

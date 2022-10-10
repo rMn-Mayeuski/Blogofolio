@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from "./ListPosts.module.scss"
-import Test from './Test';
-import {IPost} from "./Test";
+import RenderPostCard, {IPost} from "./RenderPostCard/RenderPostCard";
 
 interface PostsListProps {
     postsConfig: IPost[];
@@ -20,18 +19,18 @@ const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
     return  (
                 <div className={styles.listPostsContainer}>
                     <div className={`${styles.listPostsContainerLeft}`}>
-                    <Test {...postsConfig[0]} size={"Main"}/>
+                    <RenderPostCard {...postsConfig[0]} size={"Main"}/>
                         <div className={styles.tabPostsContainer}>
                         {postsConfig
                         .map((post, index) =>
-                        <Test key={post.id} {...post} size={handleSizeForCard(index)}/>)
+                        <RenderPostCard key={post.id} {...post} size={handleSizeForCard(index)}/>)
                         .filter((post, index) => index >= 1 && index <= 4 )}
                         </div>
                     </div>
                     <div className={styles.listPostsContainerRight}>
                         {postsConfig
                         .map((post, index) =>
-                            <Test key={post.id} {...post} size={handleSizeForCard(index)}/>)
+                            <RenderPostCard key={post.id} {...post} size={handleSizeForCard(index)}/>)
                         .filter((post, index) => index >= 5)}
                     </div>
                 </div>

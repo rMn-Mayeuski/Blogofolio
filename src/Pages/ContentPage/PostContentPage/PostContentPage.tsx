@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { IPost } from '../../components/ListPosts/Test';
-import ContentPage from '../ContentPage/ContentPage';
-import data from "../../SharedLogic/ProjectDate.json";
+import { IPost } from '../../../components/ListPosts/RenderPostCard/RenderPostCard';
+import ContentPage from '../ContentPage';
+import data from "../../../SharedLogic/ProjectDate.json";
 
 const PostContentPage: FC = () => {
 

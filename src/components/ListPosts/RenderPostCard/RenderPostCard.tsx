@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import "../../App.scss";
-import MainPost from './MainPost/MainPost';
-import TabPost from './TabPost/TabPost';
-import SmalPost from './SmallPost/SmallPost';
+import "../../../App/App.scss";
+import MainPost from '../MainPost/MainPost';
+import TabPost from '../TabPost/TabPost';
+import SmalPost from '../SmallPost/SmallPost';
 
 type PostSizes = "Small" | "Tab" | "Main";
 
@@ -19,7 +19,7 @@ export interface IPost {
     text: string,
 }
 
-const Test: FC<IPost & PostProps> = (props) => {
+const RenderPostCard: FC<IPost & PostProps> = (props) => {
     const renderPostCard = () => {
         switch (props.size) {
             case "Main":
@@ -33,4 +33,4 @@ const Test: FC<IPost & PostProps> = (props) => {
     return renderPostCard()
 };
 
-export default Test;
+export default RenderPostCard;

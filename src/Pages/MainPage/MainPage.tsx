@@ -3,7 +3,7 @@ import ListPosts from '../../components/ListPosts/ListPosts';
 import Tabs from '../../components/Tabs/Tabs';
 import Title from '../../components/Title/Title';
 import data from "../../SharedLogic/ProjectDate.json";
-import "../../mixin.scss";
+import "../../App/mixin.scss";
 
 const MainPage: React.FC = () => {
 

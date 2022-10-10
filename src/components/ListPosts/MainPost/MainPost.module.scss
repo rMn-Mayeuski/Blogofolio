@@ -1,4 +1,4 @@
-@import "../../../mixin.scss";
+@import "../../../App/mixin.scss";
 
 .date {
     @include postDate;
@@ -26,6 +26,7 @@
     &Top{
         display: flex;
         flex-direction: row;
+        cursor: pointer;
     }
     &Left{
         display: flex;
