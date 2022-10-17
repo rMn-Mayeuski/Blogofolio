@@ -5,9 +5,9 @@ export interface FormInputProps {
     label: string;
     placeholder: string;
     type: string;
-    id: number;
+    id: string;
     value?: string;
-    onChange?: ChangeEventHandler;
+    onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 const FormInput:FC<FormInputProps> = ({label, placeholder, id, type, value, onChange}) => {
@@ -15,6 +15,7 @@ const FormInput:FC<FormInputProps> = ({label, placeholder, id, type, value, onCh
         <div className={styles.inputConteiner}>
             <label >{label}</label>
             <input
+            id={id}
             required 
             value={value}
             type={type}

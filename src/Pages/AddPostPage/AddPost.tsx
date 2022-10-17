@@ -17,13 +17,13 @@ const AddPost: React.FC = () => {
                             label={'Title'} 
                             placeholder={'Post title'} 
                             type={'text'} 
-                            id={Math.random()}
+                            id="title"
                         />
                         <FormInput 
                             label={'URL'} 
                             placeholder={'URL'} 
                             type={'url'} 
-                            id={Math.random()}
+                            id="url"
                         />
                     </div>
                     <div className={styles.addPostConteinerFormBottom}>
@@ -31,13 +31,13 @@ const AddPost: React.FC = () => {
                         label={'Publish at'} 
                         placeholder={''} 
                         type={'date'} 
-                        id={Math.random()}
+                        id="date"
                         />
                     <FormInput 
                         label={'Image'} 
                         placeholder={''} 
                         type={'file'} 
-                        id={Math.random()}
+                        id="image"
                         />
                     </div>
                     <div className={styles.addPostConteinerFormDescription}>

@@ -12,7 +12,7 @@ const ReserPassPage: React.FC = () => {
                 <HomeLink/>
                 <Title title="Reset password"/>
                 <form className={styles.resetPassPageContainerForm}>
-                    <FormInput label='Email' placeholder='Your email' type='email' id={Math.random()}/>
+                    <FormInput label='Email' placeholder='Your email' type='email' id="email"/>
                     <MainFormBTN text='Reset'/>
                 </form>
             </div>

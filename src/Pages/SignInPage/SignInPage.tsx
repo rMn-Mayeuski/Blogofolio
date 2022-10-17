@@ -21,14 +21,14 @@ const SignInPage: React.FC = () => {
                     className={styles.formContainer} 
                 >
                     <FormInput 
-                        id={Math.random()} 
+                        id="email" 
                         type='email' 
                         label="Email" 
                         placeholder='Your email'
                     />
                     
                     <FormInput 
-                        id={Math.random()}
+                        id="password"
                         type='password' 
                         label="Password" 
                         placeholder='Your password'

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./UserInfo.module.scss";
 import Avatar from './Avatar/Avatar';
+import { useSelector } from 'react-redux';
 
 interface UserInfo {
     userName?: string;
@@ -11,19 +12,20 @@ interface UserInfo {
 
 const UserInfo: React.FC<UserInfo> = (
     {
-        userName="", 
         avatarUrl="",
         className="", 
     }) => {
+        // @ts-ignore
+        const { user } = useSelector(state => state.user)
     return (
-        <div className={`${styles.userInfoWrapper} ${!!userName && styles.user} ${className}`}>
-                <Link to={!!userName ? "/home" : "/signin"}>
+        <div className={`${styles.userInfoWrapper} ${!!user?.username && styles.user} ${className}`}>
+                <Link to={!!user?.username ? "/home" : "/signin"}>
                     <div className={styles.userInfo}>
                         <Avatar 
-                            userName={userName} 
+                            userName={user?.username} 
                             url={avatarUrl} 
                         />
-                        {!!userName && <span className={styles.userName}>{userName}</span>}
+                        {!!user?.username && <span className={styles.userName}>{user?.username}</span>}
                     </div>
                 </Link>
             </div>

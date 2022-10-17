@@ -12,8 +12,8 @@ const NewPassPage: React.FC = () => {
                 <HomeLink/>
                 <Title title="New password"/>
                 <form className={styles.newPassPageConteinerForm}>
-                    <FormInput label='Password' placeholder='Your password' type='password' id={Math.random()}/>
-                    <FormInput label='Confirm password' placeholder='Confirm your password' type='password' id={Math.random()}/>
+                    <FormInput label='Password' placeholder='Your password' type='password' id="password"/>
+                    <FormInput label='Confirm password' placeholder='Confirm your password' type='password' id="confirmPassword"/>
                     <MainFormBTN text='Set password'/>
                 </form>
             </div>
