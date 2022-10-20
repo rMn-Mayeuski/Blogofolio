@@ -27,7 +27,7 @@ const TabPost: React.FC<IPost> = (props) => {
                     <h3 className={styles.tabPostTitle}>{props.title}</h3>
                 </div>
             </div>
-            <ListPostsAction/>
+            <ListPostsAction post={props}/>
         </div>
     );
 };

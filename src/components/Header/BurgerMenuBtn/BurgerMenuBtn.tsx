@@ -13,8 +13,8 @@ interface BurgerMenuBtn {
 const BurgerMenuBtn: React.FC<BurgerMenuBtn> = ({title, background, to}) => {
     return (
         <button
-        className={styles.burgerMenuBtn} 
-        style={{background}}
+            className={styles.burgerMenuBtn} 
+            style={{background}}
         >
             <NavLink to={to}>{title}</NavLink>
         </button>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from "./Header.module.scss"
 import UserInfo from './UserInfo/UserInfo';
-import BurgerMenu from './BurgerMenu/BurgerMenu';
+import BurgerMenuAuth from './BurgerMenuAuth/BurgerMenuAuth';
 
 const Header: React.FC = () => {
 
@@ -28,10 +28,10 @@ const Header: React.FC = () => {
                         </button>
                     </div>
                     <UserInfo 
-                        userName={'Raman Mayeuski'}
+                        userName={''}
                         avatarUrl={""}
                     />
-                    <BurgerMenu change={menuActive} onClick={burgerMenuActive}/>
+                    <BurgerMenuAuth change={menuActive} onClick={burgerMenuActive}/>
                 </div>
         </header>
     );

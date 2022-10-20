@@ -27,7 +27,7 @@ const SmalPost: React.FC<IPost> = (props) => {
                     <img src={props.image} alt="img" />
                 </div>
             </div>
-            <ListPostsAction/>
+            <ListPostsAction post={props}/>
         </div>
     );
 };

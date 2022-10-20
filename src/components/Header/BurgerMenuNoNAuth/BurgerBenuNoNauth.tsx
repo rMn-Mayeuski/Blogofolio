@@ -1,8 +1,10 @@
-import React, { MouseEventHandler, ReactEventHandler, ReactNode, useEffect, useState } from 'react';
-import UserInfo from '../UserInfo/UserInfo';
-import styles from "../BurgerMenu/BurgerMenu.module.scss";
-import BurgerMenuBtn from './BurgerMenuBtn/BurgerMenuBtn';
-import BurgerMenuBtnThemSwitch from './BurgerMenuBtnThemSwitch/BurgerMenuBtnThemSwitch';
+import React, { FC, MouseEventHandler } from 'react';
+
+import styles from "./BurgerMenuAuth.module.scss";
+
+import BurgerMenuBtn from '../BurgerMenuBtn/BurgerMenuBtn';
+import BurgerMenuBtnThemSwitch from '../BurgerMenuBtnThemSwitch/BurgerMenuBtnThemSwitch';
+
 import { useTheme } from '../../../provider/ThemeProvider';
 import { Theme } from '../../../context/ThemeContext';
 
@@ -11,7 +13,7 @@ interface MenuСondition {
     onClick: MouseEventHandler;
 }
 
-const BurgerMenu: React.FC<MenuСondition> = (props) => {
+const BurgerBenuNoNauth: FC<MenuСondition> = (props) => {
 
     const theme = useTheme();
 
@@ -29,7 +31,7 @@ const BurgerMenu: React.FC<MenuСondition> = (props) => {
 
                 <div className={styles.burgerMenuContentTop}>
                     <div className={styles.burgerMenuUserInfo}>
-                        <UserInfo userName='Raman Mayeuski'/>
+                        
                     </div>
                     <BurgerMenuBtn to='/addpost' title='Add post'/>
                     <BurgerMenuBtn to='/home' title='Home'/>
@@ -50,7 +52,7 @@ const BurgerMenu: React.FC<MenuСondition> = (props) => {
                             }
                         />
                     </div>
-                    <BurgerMenuBtn to='/signin' title='Sign In'/>
+                    <BurgerMenuBtn to='/signin' title='Log Out'/>
                 </div>
 
             </div>
@@ -58,6 +60,4 @@ const BurgerMenu: React.FC<MenuСondition> = (props) => {
     );
 };
 
-export default BurgerMenu;
-
-
+export default BurgerBenuNoNauth;

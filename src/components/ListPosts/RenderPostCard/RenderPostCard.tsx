@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 import "../../../App/App.scss";
 import MainPost from '../MainPost/MainPost';
 import TabPost from '../TabPost/TabPost';
@@ -17,6 +17,11 @@ export interface IPost {
     date: string,
     title: string,
     text: string,
+    like?: boolean,
+    dislike?: boolean,
+    favorite?: boolean,
+    likes?: number,
+    dislikes?: number,
 }
 
 const RenderPostCard: FC<IPost & PostProps> = (props) => {

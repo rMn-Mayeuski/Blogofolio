@@ -15,8 +15,10 @@ const UserInfo: React.FC<UserInfo> = (
         avatarUrl="",
         className="", 
     }) => {
+
         // @ts-ignore
         const { user } = useSelector(state => state.user)
+
     return (
         <div className={`${styles.userInfoWrapper} ${!!user?.username && styles.user} ${className}`}>
                 <Link to={!!user?.username ? "/home" : "/signin"}>

@@ -4,6 +4,7 @@ import styles from "../ListPosts/MainPost/MainPost.module.scss";
 import s from "./ModalWindow.module.scss";
 import {useDispatch, useSelector} from "react-redux";
 import { selectCardAction } from '../../SharedLogic/SelectedCardReducer';
+import { IPost } from '../ListPosts/RenderPostCard/RenderPostCard';
 
 const ModalWindow: FC = () => {
 
@@ -42,7 +43,7 @@ const ModalWindow: FC = () => {
                             <img src={selectedCard.image} alt="img" />
                         </div>
                     </div>
-                    <ListPostsAction/>
+                    {/* <ListPostsAction post={props}/> */}
                 </div>
             </div>
         </div>
