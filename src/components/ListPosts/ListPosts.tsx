@@ -7,6 +7,7 @@ interface PostsListProps {
 }
 
 const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
+    
     const handleSizeForCard = (index:number) => {
         if (index >= 1 && index <= 4) {
             return "Tab"
@@ -19,19 +20,23 @@ const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
     return  (
                 <div className={styles.listPostsContainer}>
                     <div className={`${styles.listPostsContainerLeft}`}>
-                    <RenderPostCard {...postsConfig[0]} size={"Main"}/>
+                        {postsConfig
+                            .map((post, index) =>
+                                <RenderPostCard key={post.id} {...post} size={"Main"}/>)
+                            .filter((post, index) => index === 0)
+                            }
                         <div className={styles.tabPostsContainer}>
                         {postsConfig
-                        .map((post, index) =>
-                        <RenderPostCard key={post.id} {...post} size={handleSizeForCard(index)}/>)
-                        .filter((post, index) => index >= 1 && index <= 4 )}
+                            .map((post, index) =>
+                                <RenderPostCard key={post.id} {...post} size={handleSizeForCard(index)}/>)
+                            .filter((post, index) => index >= 1 && index <= 4 )}
                         </div>
                     </div>
                     <div className={styles.listPostsContainerRight}>
                         {postsConfig
-                        .map((post, index) =>
-                            <RenderPostCard key={post.id} {...post} size={handleSizeForCard(index)}/>)
-                        .filter((post, index) => index >= 5)}
+                            .map((post, index) =>
+                                <RenderPostCard key={post.id} {...post} size={handleSizeForCard(index)}/>)
+                            .filter((post, index) => index >= 5)}
                     </div>
                 </div>
     );

@@ -22,7 +22,8 @@
 }
 .mainPostContent{
     @include postContainer;
-    max-width: 736px;
+    width: 736px;
+    min-height: 452px; //--- DEL
     &Top{
         display: flex;
         flex-direction: row;
@@ -35,8 +36,8 @@
         margin-right: 32px;
     }
     &Right img{
-        height: 244px;
-        width: 256px;
+        min-height: 244px;
+        min-width: 256px;
         object-fit: cover;
     }
 }

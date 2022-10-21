@@ -2,14 +2,15 @@
 
 .tabPostContent{
     @include postContainer;
-    max-width: 352px;
-    margin: 21px 0 0 0;
+    width: 352px;
+    min-height: 452px; //--- DEL
+    margin: 40px 0 0 0;
     &Text{
         cursor: pointer;
     }
     &Top img{
-        height: 246px;
-        width: 352px;
+        min-height: 246px;
+        min-width: 352px;
         object-fit: cover;
         cursor: pointer;
     }

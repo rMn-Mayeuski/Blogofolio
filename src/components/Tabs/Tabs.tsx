@@ -1,13 +1,30 @@
-import React from 'react';
-import Tab from './Tab/Tab';
+import { FC } from 'react';
+import Tab, { ITab } from './Tab/Tab';
 import styles from "./Tabs.module.scss"
 
-const Tabs: React.FC = () => {
+interface ITabsProps {
+    config: ITab[];
+    activeTabItem: number;
+    onClick: any;
+}
+
+const Tabs: FC<ITabsProps> = ({
+    config = [],
+    activeTabItem = 1,
+    onClick = () => {},
+}) => {
     return (
         <div className={styles.tabsContainer}>
-            <Tab title='All'/>
-            <Tab title='My favorites'/>
-            <Tab title='Popular'/>
+            {config.map(tab => (
+                <Tab
+                    key={tab.id}
+                    id={tab.id}
+                    title={tab.title}
+                    disabled={tab.disabled}
+                    onClick={() => onClick(tab.id)}
+                    activeTabItem={activeTabItem}
+                />
+            ))}
         </div> 
     );
 };

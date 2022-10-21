@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import styles from "./Header.module.scss"
 import UserInfo from './UserInfo/UserInfo';
-import BurgerMenuAuth from './BurgerMenuAuth/BurgerMenuAuth';
+import BurgerMenu from './BurgerMenu/BurgerMenu';
 
 const Header: React.FC = () => {
 
     const [menuActive, setMenuActive] = useState(false);
 
     const burgerMenuActive = () => setMenuActive(!menuActive)
+
+    const handleClickAway: MouseEventHandler = (event) => {
+        if (event.target === event.currentTarget) {
+            burgerMenuActive()
+        }
+    }
 
     return (
         <header className={styles.header}>
@@ -31,7 +37,7 @@ const Header: React.FC = () => {
                         userName={''}
                         avatarUrl={""}
                     />
-                    <BurgerMenuAuth change={menuActive} onClick={burgerMenuActive}/>
+                    <BurgerMenu change={menuActive} onClick={handleClickAway}/>
                 </div>
         </header>
     );

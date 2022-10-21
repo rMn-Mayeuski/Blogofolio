@@ -1,6 +1,7 @@
-import React, { FC, MouseEventHandler } from 'react';
+import React, { MouseEventHandler} from 'react';
+import UserInfo from '../UserInfo/UserInfo';
 
-import styles from "./BurgerMenuAuth.module.scss";
+import styles from "./BurgerMenu.module.scss";
 
 import BurgerMenuBtn from '../BurgerMenuBtn/BurgerMenuBtn';
 import BurgerMenuBtnThemSwitch from '../BurgerMenuBtnThemSwitch/BurgerMenuBtnThemSwitch';
@@ -8,18 +9,25 @@ import BurgerMenuBtnThemSwitch from '../BurgerMenuBtnThemSwitch/BurgerMenuBtnThe
 import { useTheme } from '../../../provider/ThemeProvider';
 import { Theme } from '../../../context/ThemeContext';
 
+// type MenuVariant = "Auth" | "NoNAuth";
+
 interface MenuСondition {
-    change?: boolean
-    onClick: MouseEventHandler;
+    // variant?: MenuVariant;
+    change?: boolean;
+    onClick?: MouseEventHandler;
 }
 
-const BurgerBenuNoNauth: FC<MenuСondition> = (props) => {
+const authStat: boolean = false;
+
+const BurgerMenu: React.FC<MenuСondition> = (props) => {
 
     const theme = useTheme();
 
     function changeTheme() {
         theme.changeTheme(theme.theme === Theme.DARK ? Theme.LIGHT : Theme.DARK)
     }
+
+
 
     const handlerStylesBurgerMenu = props.change ? styles.burgerMenuActive : styles.burgerMenu;
 
@@ -31,9 +39,21 @@ const BurgerBenuNoNauth: FC<MenuСondition> = (props) => {
 
                 <div className={styles.burgerMenuContentTop}>
                     <div className={styles.burgerMenuUserInfo}>
-                        
+                        {!authStat
+                        ? 
+                        ""
+                        : 
+                        <UserInfo/>
+                        }
                     </div>
-                    <BurgerMenuBtn to='/addpost' title='Add post'/>
+
+                    {!authStat
+                        ? 
+                        ""
+                        : 
+                        <BurgerMenuBtn to='/addpost' title='Add post'/>
+                    }
+
                     <BurgerMenuBtn to='/home' title='Home'/>
                 </div>
                 
@@ -52,12 +72,20 @@ const BurgerBenuNoNauth: FC<MenuСondition> = (props) => {
                             }
                         />
                     </div>
-                    <BurgerMenuBtn to='/signin' title='Log Out'/>
-                </div>
 
+                    {!authStat
+                        ? 
+                        <BurgerMenuBtn to='/signin' title='Sign In'/> 
+                        : 
+                        <BurgerMenuBtn to='/signin' title='Log Out'/> 
+                    }
+
+                </div>
             </div>
         </div>
     );
 };
 
-export default BurgerBenuNoNauth;
+export default BurgerMenu;
+
+

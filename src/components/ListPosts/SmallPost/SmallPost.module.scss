@@ -2,8 +2,9 @@
 
 .smallPostContainer{
     @include postContainer;
-    max-width: 354px;
-    margin-bottom: 27px;
+    min-width: 354px;
+    min-height: 206px; //--- DEL
+    margin-bottom: 40px;
     &Top{
         display: flex;
         flex-direction: row;
@@ -13,8 +14,8 @@
         cursor: pointer;
     }
     &Right img{
-        height: 96px;
-        width: 96px;
+        min-height: 96px;
+        min-width: 96px;
         object-fit: cover;
         cursor: pointer;
     }

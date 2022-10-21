@@ -1,13 +1,31 @@
 import React from 'react';
 import styles from "../Tabs.module.scss"
 
-interface Tab {
+export interface ITab {
+    id: number;
     title: string;
+    disabled?: boolean;
 }
 
-const Tab: React.FC<Tab> = ({title}) => {
+interface TabItemProps extends ITab {
+    activeTabItem: number
+    onClick: any
+}
+
+const Tab: React.FC<TabItemProps> = ({
+    id, 
+    activeTabItem, 
+    title= "", 
+    onClick, 
+    disabled=false
+}) => {
     return (
-        <button className={styles.underline}>{title}</button>
+        <button 
+            onClick={!disabled ? onClick : () => {}}
+            disabled={disabled}
+            className={styles.underline}>
+                {title}
+        </button>
     );
 };
 

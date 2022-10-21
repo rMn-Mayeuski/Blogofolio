@@ -1,31 +1,37 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Title from '../../components/Title/Title';
 import styles from "./ContentPage.module.scss"
 import ContentPageActions from './ContentPageActions/ContentPageActions';
 import {IPost} from "../../components/ListPosts/RenderPostCard/RenderPostCard";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectImgAction } from '../../SharedLogic/SelectedCardReducer';
 
 export interface ContentPageProps {
-    posts: IPost | null;
+    posts: IPost;
 }
 
-const ContentPage: React.FC<ContentPageProps> = ({posts = null}) => {
+const ContentPage: FC<ContentPageProps> = ({posts}) => {
+
+    const dispatch = useDispatch();
+    const handleImgSelect = () => dispatch(selectImgAction(posts.image))
+
     return (
         <article>
             <div className={styles.wrapper}>
-                <div key={!!posts ? posts.id : "Err"} className={styles.contentPageContainer}>
+                <div className={styles.contentPageContainer}>
                     <div className={styles.contentPageNav}>
                         <NavLink to="/home">Home</NavLink>
                         <span></span>
-                        <p>Post {!!posts && posts.id}</p>
+                        <p>Post {posts.id}</p>
                     </div>
-                    <Title title={!!posts ? posts.title : "Err"}/>
-                    <img className={styles.contentPageImg} src={!!posts ? posts.image : "Err"} alt="astronaut" />
+                    <Title title={posts.title}/>
+                    <img className={styles.contentPageImg} src={posts.image} alt="PostContentIMG" onClick={handleImgSelect} />
                     <div className={styles.contentPageTextContainer}>
                         <p className={styles.contentPageText}>
-                            {!!posts && posts.text}
+                            {posts.text}
                         </p>
-                        <ContentPageActions/>
+                        <ContentPageActions post={posts}/>
                     </div>
                 </div>
             </div>

@@ -12,6 +12,10 @@
         &:hover{
             color: rgb(1, 1, 209);
         }
+        &:disabled{
+            color: #8D8E97;
+            cursor: not-allowed;
+        }
     }
 }
 .underline {

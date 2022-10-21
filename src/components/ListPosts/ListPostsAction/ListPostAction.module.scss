@@ -5,7 +5,7 @@
     margin-top: 32px;
     &Left{
         display: flex;
-        gap: 50px;
+        gap: 10px;
         & button{
             border: none;
             cursor: pointer;
@@ -31,13 +31,13 @@
         }
     }
 }
-.number {
-    font-family: 'DINPro-Bold';
+.likeCounter,
+.dislikeCounter {
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
-    color: #313037;
-    padding-left: 8px;
-    margin: 0;
+    color: var(#{--text-color-default});
+    width: 20px;
 }
