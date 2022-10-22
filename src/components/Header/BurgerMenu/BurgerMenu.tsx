@@ -8,50 +8,49 @@ import BurgerMenuBtnThemSwitch from '../BurgerMenuBtnThemSwitch/BurgerMenuBtnThe
 
 import { useTheme } from '../../../provider/ThemeProvider';
 import { Theme } from '../../../context/ThemeContext';
-
-// type MenuVariant = "Auth" | "NoNAuth";
+import { useSelector } from 'react-redux';
 
 interface MenuСondition {
-    // variant?: MenuVariant;
-    change?: boolean;
+    authMenu: boolean;
     onClick?: MouseEventHandler;
 }
 
-const authStat: boolean = false;
+const BurgerMenu: React.FC<MenuСondition> = ({authMenu = false, onClick}) => {
 
-const BurgerMenu: React.FC<MenuСondition> = (props) => {
+    const { user } = useSelector((state: any) => state.user)
 
+    const logOut = () => {
+        window.location.reload();
+    }
+    
     const theme = useTheme();
-
+    
     function changeTheme() {
         theme.changeTheme(theme.theme === Theme.DARK ? Theme.LIGHT : Theme.DARK)
     }
 
-
-
-    const handlerStylesBurgerMenu = props.change ? styles.burgerMenuActive : styles.burgerMenu;
+    const handlerStylesBurgerMenu = authMenu ? styles.burgerMenuActive : styles.burgerMenu;
 
     return (
         <div 
         className={handlerStylesBurgerMenu}
-        onClick={props.onClick}>
+        onClick={onClick}>
             <div className={styles.burgerMenuContent} onClick={e => e.stopPropagation()}>
 
                 <div className={styles.burgerMenuContentTop}>
                     <div className={styles.burgerMenuUserInfo}>
-                        {!authStat
-                        ? 
-                        ""
-                        : 
+
+                    {!!user ?
                         <UserInfo/>
-                        }
+                        :
+                        ""
+                    }
                     </div>
 
-                    {!authStat
-                        ? 
-                        ""
-                        : 
+                    {!!user ?
                         <BurgerMenuBtn to='/addpost' title='Add post'/>
+                            :
+                        ""
                     }
 
                     <BurgerMenuBtn to='/home' title='Home'/>
@@ -73,11 +72,10 @@ const BurgerMenu: React.FC<MenuСondition> = (props) => {
                         />
                     </div>
 
-                    {!authStat
-                        ? 
+                    {!!user ?
+                        <BurgerMenuBtn to='/signin' title='Log Out' onClick={logOut}/> 
+                            :
                         <BurgerMenuBtn to='/signin' title='Sign In'/> 
-                        : 
-                        <BurgerMenuBtn to='/signin' title='Log Out'/> 
                     }
 
                 </div>

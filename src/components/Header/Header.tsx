@@ -37,7 +37,7 @@ const Header: React.FC = () => {
                         userName={''}
                         avatarUrl={""}
                     />
-                    <BurgerMenu change={menuActive} onClick={handleClickAway}/>
+                    <BurgerMenu authMenu={menuActive} onClick={handleClickAway}/>
                 </div>
         </header>
     );

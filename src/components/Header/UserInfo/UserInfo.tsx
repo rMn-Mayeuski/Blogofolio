@@ -16,8 +16,7 @@ const UserInfo: React.FC<UserInfo> = (
         className="", 
     }) => {
 
-        // @ts-ignore
-        const { user } = useSelector(state => state.user)
+        const { user } = useSelector((state: any) => state.user)
 
     return (
         <div className={`${styles.userInfoWrapper} ${!!user?.username && styles.user} ${className}`}>

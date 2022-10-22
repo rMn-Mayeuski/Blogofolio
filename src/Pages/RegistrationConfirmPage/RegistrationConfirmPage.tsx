@@ -1,18 +1,33 @@
-import React, { FC } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import React, { FC, useEffect } from 'react';
+import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
 import HomeLink from '../../components/HomeLink/HomeLink';
 import MainFormBTN from '../../components/MainFormBTN/MainFormBTN';
 import Title from '../../components/Title/Title';
-import { Routes } from '../../constants/Routes';
 import styles from "./RegistrationConfirmPage.module.scss";
 
 const RegistrationConfirmPage: FC = () => {
 
     const location = useLocation();
-    const navigate = useNavigate();
 
-    const handleRedirectToHomePage = () => navigate(Routes.blog);
+    const { uid, token} = useParams();
 
+    const handleUserActivate = () => {
+        fetch ("https://studapi.teachmeskills.by/auth/users/activation/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({uid, token})
+        })
+        .then(res => res.json())
+        .then(console.log, console.log)
+    }
+
+    useEffect( () => {
+        if (uid && token) {
+            handleUserActivate()
+        }
+    }, [])
 
     return (
     <div className={styles.wrapper}>

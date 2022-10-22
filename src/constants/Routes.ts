@@ -26,8 +26,8 @@ export enum Routes {
     addPost = "/addpost",
     resetPasswordEmail = "/reset",
     resetPassword = "/newpass",
-    success = "/success",
-    registerConfirm = "/regconfirm",
+    success = "/activate/:uid/:token",
+    registerConfirm = "/activate/",
 }
 
 export const PUBLIC_ROUTES: IRoute[] = [

@@ -1,6 +1,6 @@
 import { setUserAction } from "../UseReducer"
 
-export const handleUserSignUp = (email: string, password: string, username: string, callback: () => void) => {
+export const handleUserSignUp = (email: string, password: string, username: string, callback: () => void):any => {
     return (dispatch: any) => {
         fetch("https://studapi.teachmeskills.by/auth/users/", {
             method: "POST",

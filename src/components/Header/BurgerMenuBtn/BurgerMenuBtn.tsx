@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from "./BurgerMenuBtn.module.scss"
 
 interface BurgerMenuBtn {
+    to: string;
     title?: string;
     background?: string;
     width?: string;
     img?: string;
-    to: string;
+    onClick?: MouseEventHandler;
 }
 
-const BurgerMenuBtn: React.FC<BurgerMenuBtn> = ({title, background, to}) => {
+const BurgerMenuBtn: React.FC<BurgerMenuBtn> = ({title, background, to, onClick}) => {
     return (
-        <button
+        <button 
+            onClick={onClick}
             className={styles.burgerMenuBtn} 
             style={{background}}
         >
