@@ -19,7 +19,7 @@ const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
 
     return  (
                 <div className={styles.listPostsContainer}>
-                    <div className={`${styles.listPostsContainerLeft}`}>
+                    <div className={styles.listPostsContainerLeft}>
                         {postsConfig
                             .map((post, index) =>
                                 <RenderPostCard key={post.id} {...post} size={"Main"}/>)

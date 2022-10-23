@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './provider/ThemeProvider';
 import App from './App/App';
 import {Provider} from "react-redux";
-import { store } from './SharedLogic/RootReducer';
+import { store } from './SharedLogic/reducers/RootReducer';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

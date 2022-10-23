@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
-import ListPostsAction from '../ListPostsAction/ListPostsAction';
 import styles from "./SmallPost.module.scss"
 import {IPost} from "../RenderPostCard/RenderPostCard";
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
-import { selectCardAction } from '../../../SharedLogic/SelectedCardReducer';
+import { selectCardAction } from '../../../SharedLogic/reducers/SelectedCardReducer';
+import img from "../../../img/TabPostIMG1.png";
+import PostActions, { ActionsVariants } from '../../PostActions/PostActions';
 
 const SmalPost: React.FC<IPost> = (props) => {
 
@@ -27,7 +28,7 @@ const SmalPost: React.FC<IPost> = (props) => {
                     <img src={props.image} alt="img" />
                 </div>
             </div>
-            <ListPostsAction post={props}/>
+            <PostActions variant={ActionsVariants.forCards} post={props}/>
         </div>
     );
 };

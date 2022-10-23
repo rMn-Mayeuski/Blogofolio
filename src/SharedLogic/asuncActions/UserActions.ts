@@ -1,4 +1,4 @@
-import { setUserAction } from "../UseReducer"
+import { setUserAction } from "../reducers/UseReducer"
 
 export const handleUserSignUp = (email: string, password: string, username: string, callback: () => void):any => {
     return (dispatch: any) => {

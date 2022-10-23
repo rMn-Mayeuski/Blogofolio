@@ -1,5 +1,5 @@
 import {Reducer} from "redux";
-import { IPost } from "../components/ListPosts/RenderPostCard/RenderPostCard";
+import { IPost } from "../../components/ListPosts/RenderPostCard/RenderPostCard";
 
 enum articleActions {
     SET_ARTICLE = "SET_ARTICLE",

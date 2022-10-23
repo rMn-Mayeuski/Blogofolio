@@ -2,12 +2,12 @@ import React, { FC, useEffect, useState } from 'react';
 import ListPosts from '../../components/ListPosts/ListPosts';
 import Tabs from '../../components/Tabs/Tabs';
 import Title from '../../components/Title/Title';
-import "../../App/mixin.scss";
 import { IPost } from '../../components/ListPosts/RenderPostCard/RenderPostCard';
 import { handlePosts } from '../../SharedLogic/asuncActions/PostActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { IRootState } from '../../SharedLogic/RootReducer';
 import { TABS_CONFIG } from '../../components/Tabs/TabsConfig';
+import { IRootState } from '../../SharedLogic/reducers/RootReducer';
+import "../../App/mixin.scss";
 
 const MainPage: FC = () => {
 
@@ -48,7 +48,7 @@ const MainPage: FC = () => {
     }, [activeTabItem , cards])
 
     return (
-        <main>
+        <main style={{minHeight: "calc(100vh - 93px)"}}>
             <div className="wrapper">
                 <Title title='Blog'/>
                 <Tabs config={TABS_CONFIG} onClick={handleSetActiveTabItem} activeTabItem={activeTabItem}/>

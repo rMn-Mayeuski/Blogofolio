@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import Title from '../../components/Title/Title';
 import styles from "./ContentPage.module.scss"
-import ContentPageActions from './ContentPageActions/ContentPageActions';
 import {IPost} from "../../components/ListPosts/RenderPostCard/RenderPostCard";
 import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectImgAction } from '../../SharedLogic/SelectedCardReducer';
+import { selectImgAction } from '../../SharedLogic/reducers/SelectedCardReducer';
+import PostActions, { ActionsVariants } from '../../components/PostActions/PostActions';
 
 export interface ContentPageProps {
     posts: IPost;
@@ -13,8 +13,9 @@ export interface ContentPageProps {
 
 const ContentPage: FC<ContentPageProps> = ({posts}) => {
 
-    const dispatch = useDispatch();
-    const handleImgSelect = () => dispatch(selectImgAction(posts.image))
+    const { id = 1 } = useParams()
+    const {cards} = useSelector((state:any) => state.selectedCard)
+    const selectedPost = cards.find((post: IPost) => post.id === +id);
 
     return (
         <article>
@@ -26,12 +27,12 @@ const ContentPage: FC<ContentPageProps> = ({posts}) => {
                         <p>Post {posts.id}</p>
                     </div>
                     <Title title={posts.title}/>
-                    <img className={styles.contentPageImg} src={posts.image} alt="PostContentIMG" onClick={handleImgSelect} />
+                    <img className={styles.contentPageImg} src={posts.image} alt="PostContentIMG" />
                     <div className={styles.contentPageTextContainer}>
                         <p className={styles.contentPageText}>
                             {posts.text}
                         </p>
-                        <ContentPageActions post={posts}/>
+                        <PostActions variant={ActionsVariants.forContent} post={selectedPost}/>
                     </div>
                 </div>
             </div>

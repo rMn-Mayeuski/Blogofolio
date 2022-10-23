@@ -1,0 +1,140 @@
+.actionConteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 24px;
+    &Left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        &Like, &Dislike {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        &Counter {
+            font-family: 'DINPro-Bold';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(#{--text-color-default});
+            padding-left: 8px;
+            margin: 0;
+            min-width: 25px;
+        }
+    }
+    &Right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+    }
+}
+.btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    fill: var(#{--text-color-default});
+    transition: 0.3s;
+}
+
+
+.contentPageActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    &Left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+}
+.btnLikeContent, 
+.btnDislikeContent {
+    display: flex;
+    align-items: center;
+    background: #DADADA;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+    padding: 17px 33.32px 17px 33px;
+    transition: 0.3s;
+}
+.btnBookContent {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #313037;
+    padding: 16px 32px 16px 36px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: 0.3s;
+    background: #DADADA;
+}
+.btnBookContent:hover, .btnLikeContent:hover {
+    background: #5360CD;
+    border-radius: 2px;
+    color: #E8E8E8;
+}
+.active {
+    background: #5360CD;
+    border-radius: 2px;
+    color: #E8E8E8;
+    & .svgSelectedContent{
+        fill: #E8E8E8;
+    }
+    &Dislike {
+        background: #FD3419;
+        border-radius: 2px;
+        color: #E8E8E8;
+        & .svgSelectedContent{
+            fill: #E8E8E8;
+        }
+    }
+}
+.svgSelectedContent {
+    fill: #4C4B5E;
+    transition: 0.3s;
+    background-color: #FD3419;
+}
+.btnBookContent:hover .svgSelectedContent,
+.btnLikeContent:hover .svgSelectedContent {
+    fill: #E8E8E8;
+}
+.btnDislikeContent:hover {
+    background: #FD3419;
+    border-radius: 2px;
+    color: #E8E8E8;
+}
+.btnDislikeContent:hover .svgSelectedContent {
+    fill: #E8E8E8;
+}
+.btnBookContent:disabled,
+.btnLikeContent:disabled, 
+.btnDislikeContent:disabled {
+    background: #E8E8E8;
+    color: #8D8E97;
+}
+.btnBookContent:disabled .svgSelectedContent, 
+.btnLikeContent:disabled .svgSelectedContent, 
+.btnDislikeContent:disabled .svgSelectedContent {
+    fill: #8D8E97;
+}
+.btnBookContent:disabled:hover .svgSelectedContent, 
+.btnLikeContent:disabled:hover .svgSelectedContent, 
+.btnDislikeContent:disabled:hover .svgSelectedContent {
+    fill: #8D8E97;
+}

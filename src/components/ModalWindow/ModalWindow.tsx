@@ -1,24 +1,33 @@
 import React, { FC } from 'react';
-import ListPostsAction from '../ListPosts/ListPostsAction/ListPostsAction';
 import styles from "../ListPosts/MainPost/MainPost.module.scss";
 import s from "./ModalWindow.module.scss";
 import {useDispatch, useSelector} from "react-redux";
-import { selectCardAction } from '../../SharedLogic/SelectedCardReducer';
+import { selectCardAction } from '../../SharedLogic/reducers/SelectedCardReducer';
+import { useNavigate } from 'react-router-dom';
+import { IRootState } from '../../SharedLogic/reducers/RootReducer';
 import { IPost } from '../ListPosts/RenderPostCard/RenderPostCard';
+import PostActions from '../PostActions/PostActions';
 
 const ModalWindow: FC = () => {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate();
 
-    // @ts-ignore
-    const { selectedCard } = useSelector(state => state.selectedCard);
+    const {selectedCard: card, cards = []} = useSelector((state: IRootState) => state.selectedCard);
+    const selectedCard = cards?.find((item: IPost) => item.id === card.id)
 
     const handleModalClose = () => {
         dispatch(selectCardAction(null))
     }
 
+    const modalClose = (e: any) => {
+        if (e.target === e.currentTarget) {
+            handleModalClose()
+        }
+    };
+
     return (
-        <div className={s.modalWindowWrapper}>
+        <div className={s.modalWindowWrapper} onClick={modalClose}>
             <div className={s.modalWindowContainer}>
                 <svg 
                     className={s.modalWindowContainerCross} 
@@ -43,7 +52,7 @@ const ModalWindow: FC = () => {
                             <img src={selectedCard.image} alt="img" />
                         </div>
                     </div>
-                    {/* <ListPostsAction post={props}/> */}
+                    <PostActions post={selectedCard}/>
                 </div>
             </div>
         </div>

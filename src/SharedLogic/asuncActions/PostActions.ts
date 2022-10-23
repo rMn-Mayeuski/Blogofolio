@@ -1,4 +1,4 @@
-import { setCardsAction } from "../SelectedCardReducer"
+import { setCardsAction } from "../reducers/SelectedCardReducer"
 
 export const handlePosts = ():any => {
     return (dispatch: any) => {

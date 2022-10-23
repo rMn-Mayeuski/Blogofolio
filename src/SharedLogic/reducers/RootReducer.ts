@@ -10,7 +10,6 @@ export type IRootState = ReturnType<typeof rootReducers>
 const rootReducers = combineReducers({
     selectedCard: SelectedCardReducer,
     user: userReducer,
-    posts: postsReducer,
     article: articleReducer,
 });
 

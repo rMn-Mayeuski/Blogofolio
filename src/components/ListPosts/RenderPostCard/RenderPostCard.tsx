@@ -4,7 +4,7 @@ import MainPost from '../MainPost/MainPost';
 import TabPost from '../TabPost/TabPost';
 import SmalPost from '../SmallPost/SmallPost';
 import { useDispatch } from 'react-redux';
-import { selectCardAction } from '../../../SharedLogic/SelectedCardReducer';
+import { selectCardAction } from '../../../SharedLogic/reducers/SelectedCardReducer';
 
 type PostSizes = "Small" | "Tab" | "Main";
 
@@ -29,10 +29,6 @@ export interface IPost {
 
 const RenderPostCard: FC<IPost & PostProps> = (props) => {
     const dispatch = useDispatch();
-
-    useEffect(() => {
-
-    }, [props.like])
 
     const handleCardSelect = () => dispatch(selectCardAction(props))
 

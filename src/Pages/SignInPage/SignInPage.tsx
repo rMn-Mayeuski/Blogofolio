@@ -7,8 +7,8 @@ import MainFormBTN from '../../components/MainFormBTN/MainFormBTN';
 import { NavLink, useNavigate } from 'react-router-dom';
 import HomeLink from '../../components/HomeLink/HomeLink';
 import { useDispatch } from 'react-redux';
-import { setUserAction } from '../../SharedLogic/UseReducer';
 import { Routes } from '../../constants/Routes';
+import { setUserAction } from '../../SharedLogic/reducers/UseReducer';
 
 interface ISignInForm {
     email: string,

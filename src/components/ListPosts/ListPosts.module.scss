@@ -7,10 +7,18 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    &Left{
+        width: 736px;
+        height: 100%;
+        width: 100%;
+    }
     &Right{
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 40px;
+        width: 100%;
+        max-width: 352px;
     }
 }
 .tabPostsContainer{

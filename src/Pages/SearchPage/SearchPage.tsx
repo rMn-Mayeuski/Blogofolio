@@ -2,8 +2,8 @@ import React from 'react';
 import Title from '../../components/Title/Title';
 import styles from "./SearchPage.module.scss"
 import img from "../../img/TabPostIMG1.png";
-import ListPostsAction from '../../components/ListPosts/ListPostsAction/ListPostsAction';
 import { IPost } from '../../components/ListPosts/RenderPostCard/RenderPostCard';
+import PostActions from '../../components/PostActions/PostActions';
 
 const SearchPage: React.FC<IPost> = (props) => {
     return (
@@ -24,7 +24,6 @@ const SearchPage: React.FC<IPost> = (props) => {
                                 </h3>
                             </div>
                         </div>
-                        <ListPostsAction post={props}/>
                     </div>
 
                     <div className={styles.serachPageContentCard}>
@@ -39,7 +38,7 @@ const SearchPage: React.FC<IPost> = (props) => {
                                 </h3>
                             </div>
                         </div>
-                        <ListPostsAction post={props}/>
+                        <PostActions post={props}/>
                     </div>
                 </div>
             </div>

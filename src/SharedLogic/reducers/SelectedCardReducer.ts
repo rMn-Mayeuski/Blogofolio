@@ -1,5 +1,5 @@
 import { Reducer } from "redux";
-import { IPost } from "../components/ListPosts/RenderPostCard/RenderPostCard";
+import { IPost } from "../../components/ListPosts/RenderPostCard/RenderPostCard";
 
 const SELECT_CARD = "SELECT_CARD";
 const SELECT_IMG = "SELECT_IMG";

@@ -1,4 +1,4 @@
-import { setArticleAction } from "../PostContentReducer"
+import { setArticleAction } from "../reducers/PostContentReducer"
 
 export const handleArticle = (id: number):any => {
     return (dispatch: any) => {
