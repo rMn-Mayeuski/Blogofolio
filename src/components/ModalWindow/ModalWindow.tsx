@@ -6,7 +6,7 @@ import { selectCardAction } from '../../SharedLogic/reducers/SelectedCardReducer
 import { useNavigate } from 'react-router-dom';
 import { IRootState } from '../../SharedLogic/reducers/RootReducer';
 import { IPost } from '../ListPosts/RenderPostCard/RenderPostCard';
-import PostActions from '../PostActions/PostActions';
+import PostActions, { ActionsVariants } from '../PostActions/PostActions';
 
 const ModalWindow: FC = () => {
 
@@ -52,7 +52,7 @@ const ModalWindow: FC = () => {
                             <img src={selectedCard.image} alt="img" />
                         </div>
                     </div>
-                    <PostActions post={selectedCard}/>
+                    <PostActions post={selectedCard} variant={ActionsVariants.forCards}/>
                 </div>
             </div>
         </div>

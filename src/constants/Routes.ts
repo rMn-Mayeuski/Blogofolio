@@ -10,6 +10,8 @@ import SignInPage from "../Pages/SignInPage/SignInPage";
 import SingUpPage from "../Pages/SingUpPage/SingUpPage";
 import SuccessPage from "../Pages/SuccessPage/SuccessPage";
 import RegistrationConfirmPage from "../Pages/RegistrationConfirmPage/RegistrationConfirmPage";
+import SearchPage from "../Pages/SearchPage/SearchPage";
+import RenderSearchPage from "../Pages/SearchPage/RenderSearchPage/RenderSearchPage";
 
 export interface IRoute extends RouteObject{
     path: string,
@@ -39,11 +41,11 @@ export const PUBLIC_ROUTES: IRoute[] = [
     {path: Routes.resetPassword, Element: NewPassPage},
     {path: Routes.success, Element: SuccessPage},
     {path: Routes.registerConfirm, Element: RegistrationConfirmPage},
+    {path: Routes.search, Element: RenderSearchPage },
 ]
 
 export const PRIVATE_ROUTES: IRoute[] = [
     ...PUBLIC_ROUTES,
-    {path: Routes.search, Element: MainPage},
-    {path: Routes.addPost, Element: AddPost},
+    {path: Routes.addPost, Element: AddPost },
 ]
 

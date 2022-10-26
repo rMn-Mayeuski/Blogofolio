@@ -28,7 +28,8 @@
     }
     &Content{
         @include postContainer;
-        max-width: 736px;
+        width: 736px;
+        gap: 40px;
         background: var(#{--body-background-default});
     }
 }

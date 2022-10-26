@@ -48,7 +48,11 @@
 .contentPageActions {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    @media (max-width: 487px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
     &Left {
         display: flex;
         align-items: center;
