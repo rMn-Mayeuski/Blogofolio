@@ -1,0 +1,28 @@
+.pagination {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.pagination span,
+.pagination button {
+    cursor: pointer;
+}
+
+.paginationNumbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pagination button {
+    background: unset;
+    border: unset;
+}
+
+.active {
+    color: #2231AA;
+}

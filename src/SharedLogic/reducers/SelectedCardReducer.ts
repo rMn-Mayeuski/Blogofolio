@@ -1,9 +1,6 @@
 import { Reducer } from "redux";
 import { IPost } from "../../components/ListPosts/RenderPostCard/RenderPostCard";
 
-const SELECT_CARD = "SELECT_CARD";
-const SELECT_IMG = "SELECT_IMG";
-
 enum SelectedCardActions {
     SELECT_CARD = "SELECT_CARD",
     SELECT_IMG = "SELECT_IMG",
@@ -30,9 +27,6 @@ export const SelectedCardReducer:Reducer = ((state = initialState, action) => {
             return {...state, selectedCard: action.payload}
 
         }
-        case SelectedCardActions.SELECT_IMG: {
-            return {...state, selectedImg: action.payload}
-        }
         case SelectedCardActions.SET_CARDS:
             return {...state, cards: action.payload}
 
@@ -47,7 +41,6 @@ export const SelectedCardReducer:Reducer = ((state = initialState, action) => {
     }
 })
 
-export const selectCardAction = (payload: any) => ({type: SELECT_CARD, payload});
-export const selectImgAction = (payload: any) => ({type: SELECT_IMG, payload});
+export const selectCardAction = (payload: any) => ({type: SelectedCardActions.SELECT_CARD, payload});
 export const setCardsAction = (payload: IPost[]) => ({type: SelectedCardActions.SET_CARDS, payload});
 export const updateCardAction = (payload: IPost) => ({type: SelectedCardActions.UPDATE_CARD, payload});

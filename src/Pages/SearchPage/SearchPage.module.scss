@@ -12,6 +12,7 @@
             display: flex;
             flex-direction: row;
             max-width: 1120px;
+            margin-bottom: 46px;
             & img{
                 margin-right: 32px;
                 object-fit: cover;
@@ -24,6 +25,7 @@
                 }
                 &Title{
                     @include tabPostTitle;
+                    cursor: pointer;
                 }
             }
         }

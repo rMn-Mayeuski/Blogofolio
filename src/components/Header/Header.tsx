@@ -1,9 +1,9 @@
-import React, { FC, FormEvent, MouseEventHandler, useState } from 'react';
+import React, { ChangeEvent, FC, FormEvent, MouseEventHandler, useState } from 'react';
 import UserInfo from './UserInfo/UserInfo';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Search from './Search/Search';
 import styles from "./Header.module.scss"
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Routes } from '../../constants/Routes';
 
 const Header: FC = () => {
@@ -17,19 +17,22 @@ const Header: FC = () => {
             burgerMenuActive()
         }
     }
-
-    const [ searchQuery, setSearchQuery ] = useState( "" );
-
+    
+    const [ searchQuery, setSearchQuery ] = useState<string>( "" );
     const navigate = useNavigate();
+    const location = useLocation()
+
+    const handleSearchQueryChange = async (event: ChangeEvent<HTMLInputElement>) => {
+        setSearchQuery(event.target.value);
+        location.search = `?search=${event.target.value}`
+    }
 
     const handleSearch = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const formData = new FormData(event.currentTarget);
-
-        console.log(formData);
-
+        new FormData(event.currentTarget);
         navigate( `${Routes.search}?search=${searchQuery}` );
-    } ;
+        setSearchQuery("");
+    };
 
     return (
         <header className={styles.header}>
@@ -41,8 +44,9 @@ const Header: FC = () => {
                         <span></span>
                     </div>
                     <Search 
-                        query={searchQuery} 
+                        value={searchQuery} 
                         onSubmit={handleSearch}
+                        onChange={handleSearchQueryChange}
                     />
                     <UserInfo 
                         userName={''}

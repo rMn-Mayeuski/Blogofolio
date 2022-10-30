@@ -1,0 +1,1 @@
+export const handleProtocolChange = (url: string) => url.replace("http:", "https:")

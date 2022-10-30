@@ -1,4 +1,4 @@
-export const responseToJSONHandler = (res: Response): Promise<JSON> | never => {
+export const responseToJSONHandler = (res: Response) => {
     if (res.ok) {
         return res.json()
     } else {

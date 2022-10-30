@@ -3,9 +3,8 @@ import Title from '../../components/Title/Title';
 import styles from "./ContentPage.module.scss"
 import {IPost} from "../../components/ListPosts/RenderPostCard/RenderPostCard";
 import { NavLink, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectImgAction } from '../../SharedLogic/reducers/SelectedCardReducer';
 import PostActions, { ActionsVariants } from '../../components/PostActions/PostActions';
+import { useSelector } from 'react-redux';
 
 export interface ContentPageProps {
     posts: IPost;
