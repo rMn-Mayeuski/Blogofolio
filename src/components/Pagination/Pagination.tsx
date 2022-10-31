@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import { usePagination } from '../../context/PaginationContext';
 
-import styles from "./Pagination.module.css";
+import styles from "./Pagination.module.scss";
 
 const Pagination: FC = () => {
     const { paginationData: {

@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 import {useDispatch} from "react-redux";
 import { selectCardAction } from '../../../SharedLogic/reducers/SelectedCardReducer';
-import img from "../../../img/MainPostIMG.png";
 import PostActions, { ActionsVariants } from '../../PostActions/PostActions';
 
 const MainPost:React.FC<IPost> = (props) => {    
@@ -31,7 +30,7 @@ const MainPost:React.FC<IPost> = (props) => {
                         <img src={props.image} alt="img" />
                     </div>
                 </div>
-        <PostActions variant={ActionsVariants.forCards} post={props}/>
+        <PostActions variant={ActionsVariants.forCards} post={props} onClick={onclick}/>
     </div>
     );
 };

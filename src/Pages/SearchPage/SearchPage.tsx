@@ -1,12 +1,8 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import Title from '../../components/Title/Title';
 import styles from "./SearchPage.module.scss"
 import { IPost } from '../../components/ListPosts/RenderPostCard/RenderPostCard';
 import SearchPageCard from './SearchPageCard/SearchPageCard';
-import { useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import searchServices from '../../services/searchServices';
-import { setCardsAction } from '../../SharedLogic/reducers/SelectedCardReducer';
 
 interface ISearchPageProps {
     posts: IPost[],
