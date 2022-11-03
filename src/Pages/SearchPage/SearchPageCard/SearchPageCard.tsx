@@ -3,7 +3,7 @@ import styles from "../SearchPage.module.scss"
 import { IPost } from '../../../components/ListPosts/RenderPostCard/RenderPostCard';
 import PostActions, { ActionsVariants } from '../../../components/PostActions/PostActions';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectCardAction } from '../../../SharedLogic/reducers/SelectedCardReducer';
 
 const SearchPageCard: FC<IPost> = (props) => {
@@ -13,6 +13,10 @@ const SearchPageCard: FC<IPost> = (props) => {
     const navigate = useNavigate();
 
     const handlePostPageOpen = () => navigate(`/contentpage/${id}`)
+
+    const {cards} = useSelector((state: any) => state.selectedCard);
+
+    const selectedPost = cards.find((contentPost: IPost) => contentPost.id === +id);
 
     const dispatch = useDispatch();
     const handleCardSelect = () => {
@@ -33,7 +37,13 @@ const SearchPageCard: FC<IPost> = (props) => {
                         </h3>
                     </div>
                 </div>
-                <PostActions variant={ActionsVariants.forCards} post={props} onClick={handleCardSelect}/>
+                {selectedPost
+                ?
+                <PostActions variant={ActionsVariants.forCards} post={selectedPost} />
+                :
+                <PostActions variant={ActionsVariants.forCards} post={props}/>
+            }
+                
             </div>
         </>
     );

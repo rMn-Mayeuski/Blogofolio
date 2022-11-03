@@ -30,10 +30,6 @@ export interface IPost {
 const RenderPostCard: FC<IPost & PostProps> = (props) => {
     const dispatch = useDispatch();
 
-    useEffect(() => {
-
-    }, [props.like])
-
     const handleCardSelect = () => dispatch(selectCardAction(props))
 
     const renderPostCard = () => {

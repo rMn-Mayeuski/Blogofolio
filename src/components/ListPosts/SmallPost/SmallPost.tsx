@@ -4,7 +4,6 @@ import {IPost} from "../RenderPostCard/RenderPostCard";
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
 import { selectCardAction } from '../../../SharedLogic/reducers/SelectedCardReducer';
-import img from "../../../img/TabPostIMG1.png";
 import PostActions, { ActionsVariants } from '../../PostActions/PostActions';
 
 const SmalPost: React.FC<IPost> = (props) => {
@@ -20,15 +19,20 @@ const SmalPost: React.FC<IPost> = (props) => {
     return (
         <div className={styles.smallPostContainer}>
             <div className={styles.smallPostContainerTop}>
-                <div className={styles.smallPostContainerLeft} onClick={handlePostPageOpen}>
+                <div className={styles.smallPostContainerLeft}>
                     <p className={styles.date}>{props.date}</p>
-                    <h3 className={styles.smallPostTitle}>{props.title}</h3>
+                    <h3 
+                        className={styles.smallPostTitle}
+                        onClick={handlePostPageOpen}
+                    >
+                        {props.title}
+                    </h3>
                 </div>
                 <div className={styles.smallPostContainerRight} onClick={handleCardSelect}>
                     <img src={props.image} alt="img" />
                 </div>
             </div>
-            <PostActions variant={ActionsVariants.forCards} post={props}/>
+            <PostActions variant={ActionsVariants.forCards} post={props} onClick={handleCardSelect}/>
         </div>
     );
 };

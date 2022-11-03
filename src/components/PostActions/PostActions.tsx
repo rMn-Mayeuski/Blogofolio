@@ -92,7 +92,7 @@ const PostActions: FC<IActionsProps> = ({post, variant, onClick}) => {
                 <div className={styles.contentPageActions}>
                     <div className={styles.contentPageActionsLeft}>
                         <ActionItem 
-                            className={`${post.like ? styles.active : ""} ${styles.btnLikeContent}`} 
+                            className={`${styles.btnLikeContent} ${post.like ? styles.active : ""} `} 
                             onClick={handleLikePost}
                         >
                             <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">

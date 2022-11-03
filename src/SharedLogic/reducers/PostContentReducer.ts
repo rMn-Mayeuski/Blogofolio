@@ -6,17 +6,17 @@ enum articleActions {
 }
 
 interface IInitialState {
-    article: IPost | null
+    article: IPost[]
 }
 
 const initialState: IInitialState = {
-    article: null
+    article: []
 }
 
 export const articleReducer: Reducer = (state = initialState, action) => {
     switch (action.type) {
         case articleActions.SET_ARTICLE:
-            return { article: action.payload }
+            return { ...state, article: action.payload }
 
         default:
             return state

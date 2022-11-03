@@ -8,6 +8,7 @@ export const handleUserSignUp = (email: string, password: string, username: stri
             headers: {
                 "Content-Type": "application/json"
             }
+            
         })
         .then(res => {
             if (res.ok) {

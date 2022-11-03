@@ -10,7 +10,6 @@ import SignInPage from "../Pages/SignInPage/SignInPage";
 import SingUpPage from "../Pages/SingUpPage/SingUpPage";
 import SuccessPage from "../Pages/SuccessPage/SuccessPage";
 import RegistrationConfirmPage from "../Pages/RegistrationConfirmPage/RegistrationConfirmPage";
-import SearchPage from "../Pages/SearchPage/SearchPage";
 import RenderSearchPage from "../Pages/SearchPage/RenderSearchPage/RenderSearchPage";
 
 export interface IRoute extends RouteObject{

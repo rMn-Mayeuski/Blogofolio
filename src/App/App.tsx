@@ -10,8 +10,7 @@ import "./App.scss";
 
 const App: FC = () => {
 
-      // @ts-ignore
-      const { selectedCard } = useSelector(state => state.selectedCard);
+  const {selectedCard} = useSelector((state: any) => state.selectedCard);
 
   return (
     <>

@@ -23,7 +23,7 @@ class searchServices {
     }
 
     static async getSearchPage(url: string): Promise<ISearchResults> {
-        return await HTTPService.get(url).then(responseToJSONHandler).catch(console.log)
+        return await HTTPService.get(url).then(responseToJSONHandler).catch(console.error)
     }
 }
 

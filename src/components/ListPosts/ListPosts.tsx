@@ -9,7 +9,7 @@ interface PostsListProps {
 const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
     
     const handleSizeForCard = (index:number) => {
-        if (index >= 1 && index <= 4) {
+        if ( index <= 4 ) {
             return "Tab"
         }
         else {
@@ -21,20 +21,20 @@ const ListPosts: React.FC<PostsListProps> = ({postsConfig=[]}) => {
                 <div className={styles.listPostsContainer}>
                     <div className={styles.listPostsContainerLeft}>
                         {postsConfig
-                            .map((post, index) =>
+                            .map((post: IPost) =>
                                 <RenderPostCard key={post.id} {...post} size={"Main"}/>)
                             .filter((post, index) => index === 0)
                             }
                         <div className={styles.tabPostsContainer}>
                         {postsConfig
-                            .map((post, index) =>
+                            .map((post: IPost, index) =>
                                 <RenderPostCard key={post.id} {...post} size={handleSizeForCard(index)}/>)
                             .filter((post, index) => index >= 1 && index <= 4 )}
                         </div>
                     </div>
                     <div className={styles.listPostsContainerRight}>
                         {postsConfig
-                            .map((post, index) =>
+                            .map((post: IPost, index) =>
                                 <RenderPostCard key={post.id} {...post} size={handleSizeForCard(index)}/>)
                             .filter((post, index) => index >= 5)}
                     </div>

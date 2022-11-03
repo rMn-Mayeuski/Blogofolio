@@ -1,8 +1,8 @@
 import { applyMiddleware, combineReducers, createStore} from "redux";
-import { SelectedCardReducer } from "./SelectedCardReducer";
 import thunk from "redux-thunk";
+
+import { SelectedCardReducer } from "./SelectedCardReducer";
 import { userReducer } from "./UseReducer";
-import { postsReducer } from "./PostReducer";
 import { articleReducer } from "./PostContentReducer";
 
 export type IRootState = ReturnType<typeof rootReducers>

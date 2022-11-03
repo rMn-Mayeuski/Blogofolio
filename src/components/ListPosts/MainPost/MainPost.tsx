@@ -30,7 +30,7 @@ const MainPost:React.FC<IPost> = (props) => {
                         <img src={props.image} alt="img" />
                     </div>
                 </div>
-        <PostActions variant={ActionsVariants.forCards} post={props} onClick={onclick}/>
+        <PostActions variant={ActionsVariants.forCards} post={props} onClick={handleCardSelect}/>
     </div>
     );
 };

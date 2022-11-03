@@ -11,7 +11,6 @@ import PostActions, { ActionsVariants } from '../PostActions/PostActions';
 const ModalWindow: FC = () => {
 
     const dispatch = useDispatch()
-    const navigate = useNavigate();
 
     const {selectedCard: card, cards = []} = useSelector((state: IRootState) => state.selectedCard);
     const selectedCard = cards?.find((item: IPost) => item.id === card.id)

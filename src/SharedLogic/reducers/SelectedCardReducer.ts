@@ -10,23 +10,22 @@ enum SelectedCardActions {
 
 export interface initialStateType {
     selectedCard: IPost | null,
-    selectedImg: string,
     cards: IPost[]
 }
 
 const initialState: initialStateType = {
     selectedCard: null,
-    selectedImg: "null",
     cards: []
 }
 
-export const SelectedCardReducer:Reducer = ((state = initialState, action) => {
+export const SelectedCardReducer: Reducer = ((state = initialState, action) => {
     switch (action.type) {
         case SelectedCardActions.SELECT_CARD:
-        {
-            return {...state, selectedCard: action.payload}
-
-        }
+            if (action.payload) {
+                return {...state, selectedCard: action.payload};
+            } else {
+                return {...state, selectedCard: initialState.selectedCard};
+            }
         case SelectedCardActions.SET_CARDS:
             return {...state, cards: action.payload}
 
