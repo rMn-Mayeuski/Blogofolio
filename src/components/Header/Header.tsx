@@ -49,7 +49,7 @@ const Header: FC = () => {
                         onChange={handleSearchQueryChange}
                     />
                     <UserInfo 
-                        userName={''}
+                        userName={""}
                         avatarUrl={""}
                     />
                     <BurgerMenu 

@@ -11,7 +11,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-    color: #313037;
+    color: var(--text-color-default);
     &Numbers {
         display: flex;
         align-items: center;
@@ -30,7 +30,7 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 24px;
-        color: #313037;
+        color: var(--text-color-default);
     }
 }
 .active {

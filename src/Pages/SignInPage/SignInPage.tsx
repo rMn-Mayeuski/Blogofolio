@@ -4,11 +4,11 @@ import Title from '../../components/Title/Title';
 import FormInput from '../../components/FormInput/FormInput';
 import MinorFormBTN from '../../components/MinorFormtBTN/MinorFormBTN';
 import MainFormBTN from '../../components/MainFormBTN/MainFormBTN';
-import { NavLink, useNavigate } from 'react-router-dom';
 import HomeLink from '../../components/HomeLink/HomeLink';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Routes } from '../../constants/Routes';
-import { setUserAction } from '../../SharedLogic/reducers/UseReducer';
+import { handleUserSignIn } from '../../SharedLogic/asuncActions/UserActions';
 
 interface ISignInForm {
     email: string,
@@ -17,142 +17,152 @@ interface ISignInForm {
 
 const SignInPage: FC = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleUserNavigate = () => navigate(Routes.blog)
 
     const [signInForm, setSignInForm] = useState<ISignInForm>({ email: "", password: "" });
 
-    const dispatch = useDispatch()
-
     const handleSetEmail: ChangeEventHandler<HTMLInputElement> = ({target: {value: email }}): void => setSignInForm(prevState => ({...prevState, email}));
     const handleSetPassword: ChangeEventHandler<HTMLInputElement> = ({target: {value: password }}): void => setSignInForm(prevState => ({...prevState, password}));
 
-    const handelUserTokenCreate = async () => {
-        const result = await fetch ("https://studapi.teachmeskills.by/auth/jwt/create/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email: signInForm.email, password: signInForm.password })
+    // const handelUserTokenCreate = async () => {
+    //     const result = await fetch ("https://studapi.teachmeskills.by/auth/jwt/create/", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({ email: signInForm.email, password: signInForm.password })
 
-        }).then(res => {
-            if (res.ok) {
-                return res.json()
-            } else {
-                throw new Error(res.statusText)
-            }
-        })
-            for (let item in result) {
-                localStorage.setItem(item, result[item])
-            }
-    }
+    //     }).then(res => {
+    //         if (res.ok) {
+    //             return res.json()
+    //         } else {
+    //             throw new Error(res.statusText)
+    //         }
+    //     })
+    //         for (let item in result) {
+    //             localStorage.setItem(item, result[item])
+    //         }
+    // }
 
-    const handleUpdateAccessToken = async () => {
-        const refresh = localStorage.getItem( "refresh");
+    // const handleUpdateAccessToken = async () => {
+    //     const refresh = localStorage.getItem( "refresh");
 
-        const { accessToken } = await fetch( "https://studapi.teachmeskills.by/auth/jwt/refresh/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({refresh})
-        }).then(res => {
-            if (res.ok) {
+    //     const { accessToken } = await fetch( "https://studapi.teachmeskills.by/auth/jwt/refresh/", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({refresh})
+    //     }).then(res => {
+    //         if (res.ok) {
 
-                const json = res.json();
+    //             const json = res.json();
 
-                console.log(json, "UPD Access token");
+    //             console.log(json, "UPD Access token");
 
-                return json;
+    //             return json;
 
-            } else {
-                throw new Error("Mess2")
-            }
-        })
-        localStorage.setItem("access", accessToken);
+    //         } else {
+    //             throw new Error("Mess2")
+    //         }
+    //     })
+    //     localStorage.setItem("access", accessToken);
 
-        return accessToken
-    }
+    //     return accessToken
+    // }
 
-    const handleVerifyToken = async () => {
-        const token = localStorage.getItem("access");
+    // const handleVerifyToken = async () => {
+    //     const token = localStorage.getItem("access");
 
-        const result = {
-            token: token,
-            valid: false,
-        }
+    //     const result = {
+    //         token: token,
+    //         valid: false,
+    //     }
 
-        if (!!token) {
-            await fetch( "https://studapi.teachmeskills.by/auth/jwt/verify/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify( {token: localStorage.getItem("access")})
-        }).then(res => {
-            if (res.ok) {
+    //     if (!!token) {
+    //         await fetch( "https://studapi.teachmeskills.by/auth/jwt/verify/", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify( {token: localStorage.getItem("access")})
+    //     }).then(res => {
+    //         if (res.ok) {
 
-                const json = res.json();
+    //             const json = res.json();
 
-                console.log(json, "Verify token");
+    //             console.log(json, "Verify token");
 
-                return json;
-            } else {
-                throw new Error("Mess")
-            }
-        })
-            result.valid = true
-        }
-        return result
-    }
+    //             return json;
+    //         } else {
+    //             throw new Error("Mess")
+    //         }
+    //     })
+    //         result.valid = true
+    //     }
+    //     return result
+    // }
 
-    const handelUserInformationCall = async (token: string) => {
-        return await fetch("https://studapi.teachmeskills.by/auth/users/me", {
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        }).then(res => {
-        if (res.ok) {
-            const json = res.json();
+    // const handelUserInformationCall = async (token: string) => {
+    //     return await fetch("https://studapi.teachmeskills.by/auth/users/me", {
+    //         headers: {
+    //             "Authorization": `Bearer ${token}`
+    //         }
+    //     }).then(res => {
+    //     if (res.ok) {
+    //         const json = res.json();
 
-            console.log(json, "User Info");
+    //         console.log(json, "User Info");
 
-            return json;
-        }
-    })
-        .catch(console.log)
-    }
+    //         return json;
+    //     }
+    // })
+    //     .catch(console.log)
+    // }
     
 
-    const handelUserInformationGet = async () => {
+    // const handelUserInformationGet = async () => {
 
-        const { valid, token } = await handleVerifyToken()
+    //     const { valid, token } = await handleVerifyToken()
 
-        let user = null;
+    //     let user = null;
 
-        if (valid && token) {
-            user = await handelUserInformationCall(token)
-    } else {
-            const token = await handleUpdateAccessToken()
-            user = await handelUserInformationCall(token)
-        }
-        return user
-    }
+    //     if (valid && token) {
+    //         user = await handelUserInformationCall(token)
+    // } else {
+    //         const token = await handleUpdateAccessToken()
+    //         user = await handelUserInformationCall(token)
+    //     }
+    //     return user
+    // }
+
+    // const handleSignIn = async () => {
+    //     try {
+    //         await handelUserTokenCreate();
+    //         const user = await handelUserInformationGet();
+
+    //         console.log(user);
+
+    //         if (user) {
+    //             dispatch(setUserAction(user))
+                
+    //             handleUserNavigate()
+
+    //             localStorage.setItem("user", user);
+    //         }
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }
 
     const handleSignIn = async () => {
         try {
-            await handelUserTokenCreate();
-            const user = await handelUserInformationGet();
-
-            console.log(user);
-            
-            if (user) {
-                dispatch(setUserAction(user))
-                
-                handleUserNavigate()
-            }
+            // @ts-ignore
+            dispatch(await handleUserSignIn(signInForm.email, signInForm.password, handleUserNavigate))
         } catch (e) {
-            console.log(e);
+            console.log(e)
         }
     }
 

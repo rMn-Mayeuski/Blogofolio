@@ -26,7 +26,11 @@ const UserInfo: React.FC<UserInfo> = (
                             userName={user?.username} 
                             url={avatarUrl} 
                         />
-                        {!!user?.username && <span className={styles.userName}>{user?.username}</span>}
+                        {!!user?.username && 
+                        <span className={styles.userName}
+                        >
+                            {(user?.username).split(/(?=[A-Z])/).join(" ")}
+                        </span>}
                     </div>
                 </Link>
             </div>
