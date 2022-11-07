@@ -1,0 +1,21 @@
+.resetImageBtn{
+    position: absolute;
+    top: 34px;
+    right: 5px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #78768f;
+    cursor: pointer;
+    padding: 15px;
+    transition: 0.4s;
+    &:hover{
+        background: #DADADA;
+        transition: 0.4s;
+    }
+}

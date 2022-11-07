@@ -37,4 +37,6 @@
 .smallPostTitle{
     @include tabPostTitle;
     margin-top: 8px;
+    overflow: hidden;
+    height: 84px;
 }

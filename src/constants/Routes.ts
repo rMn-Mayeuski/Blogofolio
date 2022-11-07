@@ -4,7 +4,7 @@ import {RouteObject} from "react-router-dom";
 import AddPost from "../Pages/AddPostPage/AddPost";
 import MainPage from "../Pages/MainPage/MainPage";
 import NewPassPage from "../Pages/NewPassPage/NewPassPage";
-import PostContentPage from "../Pages/ContentPage/PostContentPage/PostContentPage";
+import PostContentPage from "../Pages/ContentPage/RenderContentPage";
 import ReserPassPage from "../Pages/ResetPassPage/ReserPassPage";
 import SignInPage from "../Pages/SignInPage/SignInPage";
 import SingUpPage from "../Pages/SingUpPage/SingUpPage";

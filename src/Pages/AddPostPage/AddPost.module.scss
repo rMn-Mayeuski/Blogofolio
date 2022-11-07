@@ -47,58 +47,6 @@
                 }
             }
         }
-        &Description{
-            display: flex;
-            flex-direction: column;
-            & label{
-                @include formLabel;
-                margin-bottom: 8px;
-            }
-            & textarea{
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 20px;
-                color: #8D8E97;
-                padding: 20px;
-                border: none;
-                outline: none;
-                height: 98px;
-                @media (max-width: 1167px) {
-                    width: 688px;
-                }
-                @media (max-width: 722px) {
-                    width: 272px;
-                }
-            }
-        }
-        &Text{
-            display: flex;
-            flex-direction: column;
-            & label{
-                @include formLabel;
-                margin-bottom: 8px;
-            }
-            & textarea{
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 20px;
-                color: #8D8E97;
-                padding: 20px;
-                border: none;
-                outline: none;
-                height: 245px;
-                @media (max-width: 1167px) {
-                    width: 688px;
-                }
-                @media (max-width: 722px) {
-                    width: 272px;
-                }
-            }
-        }
         &Btns{
             display: flex;
             flex-direction: row;
@@ -136,7 +84,8 @@
                 }
                 &Cancel{
                     border: none;
-                    outline: none;font-family: 'Inter';
+                    outline: none;
+                    font-family: 'Inter';
                     font-style: normal;
                     font-weight: 600;
                     font-size: 18px;
@@ -144,6 +93,11 @@
                     color: #78768f;
                     cursor: pointer;
                     padding: 16px;
+                    transition: 0.4s;
+                    &:hover{
+                        background: #DADADA;
+                        transition: 0.4s;
+                    }
                     @media (max-width: 722px) {
                         order: 2;
                     }
@@ -157,4 +111,12 @@
             }
         }
     }
+}
+.imgPreview {
+    object-fit: contain;
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
 }

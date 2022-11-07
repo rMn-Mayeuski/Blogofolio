@@ -1,0 +1,49 @@
+.contentPagination {
+    display: flex;
+    justify-content: space-between;;
+    align-items: center;
+    padding-top: 72px;
+    &Prev,
+    &Next{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        gap: 24px;
+        background: unset;
+        border: none;
+        cursor: pointer;
+        &Nav{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
+    &PrevNav{
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    &NextNav{
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    &Title{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #8D8E97;
+    }
+    &Text{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(#{--text-color-default});
+        &:hover{
+            color: #5360CD;
+        }
+    }
+}

@@ -1,12 +1,12 @@
 import React, { FC, useEffect } from 'react';
-import Title from '../../components/Title/Title';
+import Title from '../../../components/Title/Title';
 import styles from "./ContentPage.module.scss"
-import {IPost} from "../../components/ListPosts/RenderPostCard/RenderPostCard";
+import {IPost} from "../../../components/ListPosts/RenderPostCard/RenderPostCard";
 import { NavLink, useParams } from 'react-router-dom';
-import PostActions, { ActionsVariants } from '../../components/PostActions/PostActions';
+import PostActions, { ActionsVariants } from '../../../components/PostActions/PostActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { handlePosts } from '../../SharedLogic/asuncActions/PostActions';
-import { selectCardAction } from '../../SharedLogic/reducers/SelectedCardReducer';
+import { handlePosts } from '../../../SharedLogic/asuncActions/PostActions';
+import { selectCardAction } from '../../../SharedLogic/reducers/SelectedCardReducer';
 
 export interface ContentPageProps {
     post: IPost;
@@ -36,8 +36,6 @@ const ContentPage: FC<ContentPageProps> = ({post}) => {
     }, [])
 
     return (
-        <article>
-            <div className={styles.wrapper}>
                 <div className={styles.contentPageContainer}>
                     <div className={styles.contentPageNav}>
                         <NavLink to="/home">Home</NavLink>
@@ -59,8 +57,6 @@ const ContentPage: FC<ContentPageProps> = ({post}) => {
                         {/* <PostActions variant={ActionsVariants.forContent} post={post} onClick={handleCardSelect}/> */}
                     </div>
                 </div>
-            </div>
-        </article>
     );
 };
 
