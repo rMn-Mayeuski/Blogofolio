@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Blogofolio/static/css/main.3b989188.css",
+    "main.js": "/Blogofolio/static/js/main.1fd3713b.js",
+    "index.html": "/Blogofolio/index.html",
+    "static/media/user.svg": "/Blogofolio/static/media/user.74b983f9bb66985eb38b4c09c79c1622.svg",
+    "main.3b989188.css.map": "/Blogofolio/static/css/main.3b989188.css.map",
+    "main.1fd3713b.js.map": "/Blogofolio/static/js/main.1fd3713b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b989188.css",
+    "static/js/main.1fd3713b.js"
+  ]
+}
