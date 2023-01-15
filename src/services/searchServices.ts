@@ -12,13 +12,7 @@ export interface ISearchResults {
 class searchServices {
     static async getSearchResults( search: string = "", offset: number = 0, limit: number = 6  ): Promise<ISearchResults>  {
         return await HTTPService.get(`https://studapi.teachmeskills.by/blog/posts?search=${search}&limit=${limit}&offset=${offset}`)
-        .then(res => {
-            if (res.ok) {
-                return res.json()
-            } else {
-                throw new Error(res.statusText)
-            }
-        })
+        .then(responseToJSONHandler)
         .catch(console.error)
     }
 
